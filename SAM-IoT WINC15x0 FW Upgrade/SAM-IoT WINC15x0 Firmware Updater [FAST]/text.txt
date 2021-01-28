@@ -1,0 +1,66 @@
+Defaulting to RSA key cert pair @  and 
+Defaulting to ECDSA certificate @ 
+Mode UART
+Chip 3A0
+Downloading Image... (pod 0) (comport -port 8)
+image_downloader.exe 	-no_wait 	-aardvark 0 -port 8 	-vflash_path ../../../vflash_image_downloader.bin 	-bf_bin  ../../../boot_firmware/release3A0/boot_firmware.bin 	-pf_bin  ../../../programmer_firmware/release3A0/programmer_firmware.bin 	-df_bin  ../../../downloader_firmware/release3A0/downloader_firmware.bin 	-fw3a0_path ../../../firmware/m2m_aio_3a0.bin
+********************************************
+*  >Programmer for WINC1500 SPI Flash<     *
+*      Owner:  Atmel Corporation           *
+********************************************
+SVN REV 16761 SVN BR branches/rel_1500_19.6.1 
+Built at May 23 2018	14:34:49
+Port number 8
+Virtual Flash Path ../../../vflash_image_downloader.bin
+Firmware Path (3A0) ../../../firmware/m2m_aio_3a0.bin
+>>Initialize programmer.
+(APP)(INFO)Built-in WINC1500 UART Found
+>>(ERR):Invalid chip ID = 0x00000000
+>>(ERR):Connect NMC1500 Dx Fail
+(ERR)Failed To initialize programmer
+The system cannot find the file specified.
+Downloading Gain Values...
+gain_builder.exe 	-table 1 ../gain_sheets/atwinc1500_mr210pb_gain_setting.csv  -index 1 	-aardvark 0 -port 8 	-vflash_path ../../../vflash_gain_builder.bin 	-bf_bin  ../../../boot_firmware/release3A0/boot_firmware.bin 	-pf_bin  ../../../programmer_firmware/release3A0/programmer_firmware.bin 	-df_bin  ../../../downloader_firmware/release3A0/downloader_firmware.bin 	-no_wait
+********************************************
+*   >TX Gain Builder for WINCxxxx <        *
+*      Owner:  Atmel Corporation           *
+********************************************
+SVN REV 16761 SVN BR branches/rel_1500_19.6.1 
+Built at May 23 2018	14:33:35
+Virtual Flash Path ../../../vflash_gain_builder.bin
+>>Init Programmer
+(APP)(INFO)Built-in WINC1500 UART Found
+>>(ERR):Invalid chip ID = 0x00000000
+>>(ERR):Connect NMC1500 Dx Fail
+(ERR)Failed To intilize programmer
+The system cannot find the file specified.
+Downloading TLS Client RSA Certificate Materials...
+******************************************
+*   WINC1500 TLS Certificate Flash Tool  *
+******************************************
+(APP)(INFO)Built-in WINC1500 UART Found
+>>(ERR):Invalid chip ID = 0x00000000
+>>(ERR):Connect NMC1500 Dx Fail
+TLS Certificate Store Update FAILED !!! on Flash
+Downloading TLS Client ECDSA Certificate Materials...
+Press any key to continue . . . 
+******************************************
+*   WINC1500 TLS Certificate Flash Tool  *
+******************************************
+(APP)(INFO)Built-in WINC1500 UART Found
+>>(ERR):Invalid chip ID = 0x00000000
+>>(ERR):Connect NMC1500 Dx Fail
+*************** Failed to download *****************
+    #######################################################################
+    ##                                                                   ##
+    ##                    ########    ###     ####  ##                   ##
+    ##                    ##         ## ##     ##   ##                   ##
+    ##                    ##        ##   ##    ##   ##                   ##
+    ##                    ######   ##     ##   ##   ##                   ##
+    ##                    ##       #########   ##   ##                   ##
+    ##                    ##       ##     ##   ##   ##                   ##
+    ##                    ##       ##     ##  ####  ########             ##
+    ##                                                                   ##
+    ####################################################################### 
+Press any key to continue . . . 
+Terminate batch job (Y/N)? 
