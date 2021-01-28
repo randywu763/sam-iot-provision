@@ -4,7 +4,7 @@ This tools package is required for provisioning a Microchip SAM-IoT WG developme
 
 The Google Cloud Platform (GCP) does not use TLS client authentication (it uses JSON Web Token (JWT) in the MQTT password), so this provisioning tool is not required for use with GCP.
 
-Two following two things are required to properly provision the ATWINC1510 Wi-Fi network controller on the SAM-IoT board:
+The following two things are required to properly provision the ATWINC1510 Wi-Fi network controller on the SAM-IoT board:
 
 ## (1) ATWINC1510 Firmware Update
 
