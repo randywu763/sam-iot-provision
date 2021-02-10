@@ -1,0 +1,19 @@
+{
+    "certificateDescription": {
+        "autoRegistrationStatus": "ENABLE",
+        "certificateArn": "arn:aws:iot:us-east-1:066001009533:cacert/da38392517f85f08992db4907d61a557c7835abde17890693068053a804497b9",
+        "certificateId": "da38392517f85f08992db4907d61a557c7835abde17890693068053a804497b9",
+        "certificatePem": "-----BEGIN CERTIFICATE-----\nMIIBzTCCAXKgAwIBAgIQTzZ0tZb8zkI+4EFblwGIuTAKBggqhkjOPQQDAjA1MSEw\nHwYDVQQKDBhNaWNyb2NoaXAgVGVjaG5vbG9neSBJbmMxEDAOBgNVBAMMB1Jvb3Qg\nQ0EwHhcNMjAwNzMxMTMwMjUxWhcNMzAwNzMxMTMwMjUxWjAzMRYwFAYDVQQKDA1N\naWNyb3NvZnQgSW5jMRkwFwYDVQQDDBBNaWNyb3NvZnQgU2lnbmVyMFkwEwYHKoZI\nzj0CAQYIKoZIzj0DAQcDQgAEfk+1XSdTZra4biQcAf2lGxtUIdg5CWdULqblk46d\n/BfkHfv3JC+EOPKwC6Pj5XpjBjCwsG13mIa77fSSQ89cqaNmMGQwEgYDVR0TAQH/\nBAgwBgEB/wIBADAOBgNVHQ8BAf8EBAMCAYYwHQYDVR0OBBYEFLyoXhPCtcX5o07e\nDbnjoY9lwCryMB8GA1UdIwQYMBaAFKIw/Q5ssIz1ZQ50FewV1ejtMIBCMAoGCCqG\nSM49BAMCA0kAMEYCIQDr5DsnXM6ZvjAeujIhorI9Ppsb4fzTodGbhWRlsshJDwIh\nAPqD4mVkuY8hNRiSoTb1SbdURK/qsfnjfY14o4X9Rieg\n-----END CERTIFICATE-----\n",
+        "creationDate": "2020-07-31T09:09:21-04:00",
+        "customerVersion": 1,
+        "generationId": "17a7a797-00a5-493f-b1c7-099cdaa71e00",
+        "lastModifiedDate": "2020-07-31T09:09:21-04:00",
+        "ownedBy": "066001009533",
+        "status": "ACTIVE",
+        "validity": {
+            "notAfter": "2030-07-31T09:02:51-04:00",
+            "notBefore": "2020-07-31T09:02:51-04:00"
+        }
+    },
+    "endpointAddress": "a1nwxjdmwiwtr2.iot.us-east-1.amazonaws.com"
+}
