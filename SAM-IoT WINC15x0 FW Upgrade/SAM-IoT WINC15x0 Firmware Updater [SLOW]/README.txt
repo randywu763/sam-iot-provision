@@ -1,5 +1,7 @@
 *** Procedure to Update WINC1510 Firmware on the SAM-IoT Board ***
 
+NOTE: Before starting this process, please open the document "SAM-IoT Debugger FW Version" to make sure the Debugger firmware version is correct on your board.  If the Debugger firmware version is not set to the correct one, this procedure will fail...
+
 1.  In the "firmware" folder, duplicate the desired FW image file and rename it to "m2m_aio_3a0.bin"
 2.  Connect SAM-IoT board to PC via micro-USB cable (a disk drive named "Curiosity" should appear)
 3.  Drag and drop (i.e. copy) "SAM-IoT-WINC15x0_SerialBridge" HEX file to the "Curiosity" disk drive 
