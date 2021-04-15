@@ -12,4 +12,4 @@ The following two tasks are required to properly provision the WINC1510 Wi-Fi ne
 
 ## Certificates Generation/Storage into the WINC1510
 
-> Follow the instructions in the **Certificates Provisioning for SAM-IoT** document.
+> Follow the instructions in the **Generating Certificates for SAM-IoT** document.
