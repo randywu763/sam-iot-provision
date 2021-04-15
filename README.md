@@ -1,6 +1,8 @@
-# SAM-IoT Development Board Provisioning Tools Package
+# SAM-IoT WG Development Board Provisioning Tools Package
 
-This tools package is required for provisioning a Microchip SAM-IoT development board for use with Amazon Web Services (AWS) or Microsoft Azure Device Provisioning Service (DPS).  These Cloud services require IoT edge devices to authenticate themselves via TLS client authentication, which means X.509-based signer and client certificates need to be generated and stored in the WINC1510 Wi-Fi network controller on the SAM-IoT development board.
+This tools package is required for provisioning a Microchip SAM-IoT WG development board (Part No. EV75S95A) for use with Amazon Web Services (AWS) or Microsoft Azure Device Provisioning Service (DPS).  These Cloud services require IoT edge devices to authenticate themselves via TLS client authentication, which means X.509-based signer and client certificates need to be generated and stored in the WINC1510 Wi-Fi network controller on the SAM-IoT development board.
+
+> NOTE: This tools package will only work for Microchip development board Part No. EV75S95A.
 
 The Google Cloud Platform (GCP) does not use TLS client authentication (it uses JSON Web Token (JWT) in the MQTT password), so this provisioning tool is not required for use with GCP.
 
@@ -13,3 +15,4 @@ The following two tasks are required to properly provision the WINC1510 Wi-Fi ne
 ## Certificates Generation/Storage into the WINC1510
 
 > Follow the instructions in the **Generating Certificates for SAM-IoT** document.
+
