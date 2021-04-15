@@ -2,7 +2,7 @@
 
 ## Upgrade the WINC1510 FW using one of the existing **winc1500_X.Y.Z.prog** files (where X.Y.Z = FW version)
 
-> 1. Drag-and-drop (copy) the **sam_iot_serial_bridge.hex** file (located in the **sam_iot_serial_bridge** project folder) to the SAM IoT CURIOSITY drive
+> 1. Drag-and-drop (copy) the **sam_iot_serial_bridge.hex** file (located in the **sam_iot_serial_bridge** project folder) to the SAM-IoT **CURIOSITY** drive
 > 2. Edit the **sam_iot_winc_update.bat** file to reflect the desired WINC FW version and COM port for your SAM-IoT board (remember to save changes)
 > 3. Execute the **sam_iot_winc_update.bat** file (update process should take approximately 15 minutes)
 
