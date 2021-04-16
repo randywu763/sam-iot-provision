@@ -1,0 +1,45 @@
+build/Default/production/winc_certs_functions.o:  \
+winc_certs_functions.c  \
+ winc1500/driver/include/m2m_ssl.h  \
+winc1500/common/include/nm_common.h  \
+ winc1500/bsp/include/nm_bsp.h  \
+config/winc1500_config.h  \
+ winc1500/common/include/nm_debug.h  \
+winc1500/driver/include/m2m_types.h  \
+ winc1500/driver/source/nmdrv.h  \
+winc1500/driver/include/ecc_types.h  \
+ winc1500/socket/include/socket.h  \
+winc_certs_functions.h  \
+ winc1500/bsp/include/nm_bsp.h  \
+winc1500/driver/include/m2m_types.h  \
+ cert_def_1_signer.h  \
+cryptoauthlib/lib/atcacert/atcacert_def.h  \
+ cryptoauthlib/lib/atcacert/atcacert.h  \
+ cryptoauthlib/lib/atcacert/atcacert_date.h  \
+cert_def_4_signer.h  \
+ cert_def_2_device.h  \
+cryptoauthlib/lib/cryptoauthlib.h  \
+ cryptoauthlib/lib/hal/atca_hal.h  \
+cryptoauthlib/lib/atca_status.h  \
+ cryptoauthlib/lib/atca_bool.h  \
+cryptoauthlib/lib/atca_iface.h  \
+ cryptoauthlib/lib/atca_command.h  \
+cryptoauthlib/lib/atca_compiler.h  \
+ cryptoauthlib/lib/atca_status.h  \
+cryptoauthlib/lib/atca_devtypes.h  \
+ config/cryptoauthlib_config.h  \
+cryptoauthlib/lib/atca_device.h  \
+ cryptoauthlib/lib/atca_iface.h  \
+cryptoauthlib/lib/atca_cfgs.h  \
+ cryptoauthlib/lib/basic/atca_basic.h  \
+cryptoauthlib/lib/cryptoauthlib.h  \
+ cryptoauthlib/lib/crypto/atca_crypto_sw_sha2.h  \
+ cryptoauthlib/lib/crypto/atca_crypto_sw.h  \
+ cryptoauthlib/lib/basic/atca_helpers.h  \
+ hri/../winc1500/spi_flash/include/spi_flash.h  \
+ winc1500/bus_wrapper/include/nm_bus_wrapper.h  \
+ winc1500/driver/source/nmbus.h  \
+winc1500/driver/source/nmasic.h  \
+ hri/../winc1500/spi_flash/include/spi_flash_map.h  \
+ winc1500/driver/include/m2m_wifi.h  \
+convertions.h 
