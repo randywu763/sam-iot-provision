@@ -1,0 +1,1 @@
+This folder contains the MPLAB X project that was used to generate the `SAM_IoT_CertGen.hex` file.  In order to build the project, it requires the `Arm GNU Toolchain for 32-bit Devices` which can be downloaded [here](https://www.microchip.com/en-us/development-tools-tools-and-software/gcc-compilers-avr-and-arm)
