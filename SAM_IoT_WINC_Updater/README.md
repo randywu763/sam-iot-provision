@@ -12,6 +12,7 @@ Perform this section if a newer WINC1500 firmware binary file has been released 
 
 > 1. Copy one of the existing **winc1500_X.Y.Z** folders and rename it with the desired/newer WINC FW version
 > 2. Navigate to the **firmware** subfolder inside the newly-created **winc1500_X.Y.Z** folder
-> 3. Replace **wifi_firmware.bin** with the desired WINC binary image file
-> 4. Execute the following command: **image_tool.exe -c winc1500_X.Y.Z\config.txt -o winc1500_X.Y.Z.prog -of prog**
+> 3. Replace **wifi_firmware.bin** with the desired/newer WINC binary image file
+> 4. Navigate back to the **SAM_IoT_WINC_Updater** folder
+> 5. Execute the following command: **image_tool.exe -c winc1500_X.Y.Z\config.txt -o winc1500_X.Y.Z.prog -of prog**
 
