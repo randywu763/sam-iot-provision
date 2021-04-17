@@ -1,3 +1,5 @@
+REM *** Programming Provisioning Firmware ***
+copy SAM_IoT_CertGen.hex D:\
 REM *** Updating Python Modules ***
 python -m pip install --upgrade pip
 pip install -r py_modules.txt
@@ -10,5 +12,5 @@ REM *** Generating SIGNER Certificate ***
 python ca_create_signer.py
 REM *** Provisioning SAM-IoT Development Board ***
 cd ..
-python provision_samiot.py com3
-REM *** If an error occurs, make sure the COM port setting is correct ***
+python provision_samiot.py com29
+
