@@ -8,12 +8,12 @@ This tools package is required for provisioning a Microchip SAM-IoT WG developme
 
 The Google Cloud Platform (GCP) does not use TLS client authentication (it uses JSON Web Token (JWT) in the MQTT password), so this provisioning tool is not required for use with GCP.
 
-The following two tasks are required to properly provision the WINC1510 Wi-Fi network controller on the SAM-IoT board:
+The following two tasks are required to properly provision the WINC1510 Wi-Fi network controller on the SAM-IoT WG development board:
 
-## WINC1510 Internal Firmware Update
+## 1. WINC1510 Internal Firmware Upgrade
 
 The WINC1510 firmware must be minimum version 19.6.5 to support TLS client authentication using X.509 certificates.  Navigate to the `SAM_IoT_WINC_Upgrader` folder and follow the instructions.
 
-## Certificates Generation/Storage into the WINC1510
+## 2. Certificates Generation/Storage into the WINC1510
 
 X.509 certificates need to be generated and then stored into the WINC1510.  Navigate to the  `SAM_IoT_Certs_Generator` folder and follow the instructions.
