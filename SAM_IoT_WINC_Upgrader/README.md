@@ -1,6 +1,6 @@
-# Procedure for Upgrading the WINC1510 Firmware on the SAM-IoT WG Development Board
+# Upgrading the WINC1510 Firmware on the SAM-IoT WG Development Board
 
-## Upgrade the WINC1510 FW using one of the existing `winc1500_X.Y.Z.prog` files (where X.Y.Z = WINC FW version)
+## Reprogram the WINC1510 FW using one of the existing `winc1500_X.Y.Z.prog` files (where X.Y.Z = WINC FW version)
 
 1. Connect the SAM-IoT WG Development Board to the Host PC using a standard micro-USB cable
 
