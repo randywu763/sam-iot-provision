@@ -6,7 +6,7 @@ This process programs the flash memory of the MCU on the SAM-IoT board so any ap
 
 1. Connect the SAM-IoT WG Development Board to the Host PC using a standard micro-USB cable
 
-2. . Open a `File Explorer` window and determine the drive letter assigned to `CURIOSITY` 
+2. Open a `File Explorer` window and determine the drive `letter` assigned to `CURIOSITY` 
 
     <img src=".//media/image_01.png" />
 
@@ -42,11 +42,11 @@ This process programs the flash memory of the MCU on the SAM-IoT board so any ap
 
 Perform this section if a newer WINC1500 firmware binary file has been released and is not included in this repository.
 
-1. Copy one of the existing `winc1500_X.Y.Z` folders and rename it with the desired/newer WINC FW version
+1. Copy one of the existing `winc1500_X.Y.Z` folders and rename it with the desired/newer WINC FW version (i.e. change `X.Y.Z` to reflect the newer FW version)
 
-2. Using a File Explorer window, navigate to the `firmware` subfolder inside the newly-created `winc1500_X.Y.Z` folder
+2. Using a `File Explorer` window, navigate to the `firmware` subfolder inside the newly-created `winc1500_X.Y.Z` folder
 
-3. Replace `wifi_firmware.bin` with the desired/newer WINC binary image file
+3. Replace the existing `wifi_firmware.bin` file with the desired/newer WINC binary image file (maintaining the same file name of `wifi_firmware.bin`)
 
 4. Open a `PowerShell` window > click on `Start` > type `PowerShell` in the Search field > `Open`.  Navigate to the `SAM_IoT_WINC_Upgrader` subfolder and then execute the following command:
     ```

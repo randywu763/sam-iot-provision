@@ -8,7 +8,7 @@ In this section, you will generate root/signer/device keys & certificates which 
 
 1. Connect the SAM-IoT WG Development Board to the Host PC using a standard micro-USB cable
 
-2. Open a `File Explorer` window and determine the drive letter assigned to `CURIOSITY` 
+2. Open a `File Explorer` window and determine the drive `letter` assigned to `CURIOSITY` 
 
     <img src=".//media/image_01.png" />
 
@@ -70,12 +70,12 @@ The following files are generated during this process:
 
 - Root CA Certificate (`root-ca.crt`)
 - Root CA Key (`root-ca.key`)
-- Signer Certificate (`signer-ca.crt`)
-- Signer Certificate Signing Request (CSR) (`signer-ca.csr`)
-- Signer Key (`signer-ca.key`)
+- Signer CA Certificate (`signer-ca.crt`)
+- Signer CA Certificate Signing Request (CSR) (`signer-ca.csr`)
+- Signer CA Key (`signer-ca.key`)
 - Device Certificate (`device.crt`)
 
 The following files are stored in the WINC1510:
 
-- Signer Certificate (`signer-ca.crt`)
+- Signer CA Certificate (`signer-ca.crt`)
 - Device Certificate (`device.crt`)
