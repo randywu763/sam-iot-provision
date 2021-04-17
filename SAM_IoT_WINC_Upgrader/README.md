@@ -24,7 +24,7 @@ This process programs the flash memory of the MCU on the SAM-IoT board so any ap
 
 7. Locate the following line in the batch file and modify the highlighted parameters to reflect the correct Curiosity Virtual COM port `number` and the desired WINC FW `version`
 
-    > winc_programmer -p COM`29` -d winc1500 -i winc1500_`19.6.5`.prog -if prog -w -r -pfw winc1500_`19.6.5`\firmware\programmer_firmware_3A0.bin
+    > winc_programmer -p COM`29` -d winc1500 -i winc1500_`19.7.3`.prog -if prog -w -r -pfw winc1500_`19.7.3`\firmware\programmer_firmware_3A0.bin
 
 8. Save the changes to the file and exit the text editor
 
