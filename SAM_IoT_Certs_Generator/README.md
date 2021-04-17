@@ -25,7 +25,7 @@ In this section, you will generate root/signer/device keys & certificates which 
 
     <img src=".//media/image_04.png" />
 
-6. Using any File Explorer window, navigate to the `CertGen` subfolder
+6. Using a `File Explorer` window, navigate to the `CertGen` subfolder
 
 7. Open the `sam_iot_cert_gen.bat` file using any text editor
 
@@ -65,7 +65,7 @@ The following files are generated during this process:
 - Root CA Certificate (`root-ca.crt`)
 - Root CA Key (`root-ca.key`)
 - Signer Certificate (`signer-ca.crt`)
-- Signer Certificate Signing Request (`signer-ca.csr`)
+- Signer Certificate Signing Request (CSR) (`signer-ca.csr`)
 - Signer Key (`signer-ca.key`)
 - Device Certificate (`device.crt`)
 

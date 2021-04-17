@@ -10,11 +10,11 @@
 
     <img src=".//media/image_01.png" />
 
-4. Open the `sam_iot_winc_update.bat` file using any text editor.  Edit the file to reflect the Curiosity Virtual COM port number and the desired WINC FW version:
+4. Open the `sam_iot_winc_update.bat` file using any text editor.  Edit the file to reflect the correct Curiosity Virtual COM port number and the desired WINC FW version (highlighted below):
 
     > winc_programmer -p COM`29` -d winc1500 -i winc1500_`19.6.5`.prog -if prog -w -r -pfw winc1500_`19.6.5`\firmware\programmer_firmware_3A0.bin
 
-5. Save the changes to the file and exit the editor
+5. Save the changes to the file and exit the text editor
 
 6. Open a `PowerShell` window > click on `Start` > type `PowerShell` in the Search field > `Open`.  Navigate to the `SAM_IoT_WINC_Upgrader` subfolder and then execute the following command (the update process should take approximately 15 minutes):
     ```
