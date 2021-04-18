@@ -36,7 +36,9 @@ This process programs the flash memory of the MCU on the SAM-IoT board so any ap
 
     <img src=".//media/image_03.png" />
 
-    If any errors were encountered, confirm that the `CURIOSITY` drive `letter` and COM port `number` of the `Curiosity Virtual COM Port` are all correctly set in the `sam_iot_winc_update.bat` file
+    Here is an example of the expected output upon successful completion of running the batch file.  If any errors were encountered, confirm that the `CURIOSITY` drive `letter` and COM port `number` of the `Curiosity Virtual COM Port` are all correctly set in the `sam_iot_winc_update.bat` file.  
+    
+    <img src=".//media/image_04.png" />
 
 ## Creating new `winc1500_X.Y.Z.prog` files
 
