@@ -56,3 +56,4 @@ Perform this section if a newer WINC1500 firmware binary file has been released 
     ```
     .\image_tool.exe -c winc1500_X.Y.Z\config.txt -o winc1500_X.Y.Z.prog -of prog
     ```
+    <img src=".//media/image_05.png" />

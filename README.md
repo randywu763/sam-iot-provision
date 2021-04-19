@@ -12,7 +12,7 @@ The following two tasks are required to properly configure & provision the WINC1
 
 ## 1. WINC1510 Internal Firmware Upgrade
 
-The WINC1510 internal firmware version must be at least 19.7.3 to support TLS client authentication using X.509 certificates.  Navigate to the `SAM_IoT_WINC_Upgrader` folder and follow the instructions.
+The WINC1510 internal firmware version must be at least 19.6.5 to support TLS client authentication using X.509 certificates.  It is recommended to use the latest firmware version that has been published on the [WINC1500 product page](https://www.microchip.com/wwwproducts/en/ATWINC1500).  Navigate to the `SAM_IoT_WINC_Upgrader` folder and follow the instructions.
 
 ## 2. Certificates Generation/Storage into the WINC1510
 
