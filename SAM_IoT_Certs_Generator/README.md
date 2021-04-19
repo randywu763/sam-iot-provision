@@ -16,7 +16,7 @@ In this section, you will generate keys (root CA, signer CA) & certificates (roo
 
     <img src=".//media/image_02.png" />
 
-4. Download the latest [Python](https://www.python.org/downloads/) release. Run the installation setup program and then do the following (do not click `Install Now`):
+4. Download the latest [Python](https://www.python.org/downloads/) release. Launch the installation setup program and then do the following (do **not** click `Install Now` just yet):
 
     - Check `Add Python <X.Y> to PATH` and click `Customize installation`
         <img src=".//media/image_03.png" />
