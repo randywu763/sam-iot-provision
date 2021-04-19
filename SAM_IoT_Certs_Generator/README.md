@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this section, you will generate root/signer/device keys & certificates which will be used to provision the WINC1510 Wi-Fi network controller on the SAM-IoT WG Development Board.  This process programs the flash memory of the MCU (SAMD21) on the SAM-IoT board so any application firmware that was previously programmed will be overwritten with this provisioning firmware.
+In this section, you will generate keys (root CA, signer CA) & certificates (root CA, signer CA, device) which will be used to provision the WINC1510 Wi-Fi network controller on the SAM-IoT WG Development Board.  This process programs the flash memory of the MCU (SAMD21) on the SAM-IoT board so any application firmware that was previously programmed will be overwritten with this provisioning firmware.
 
 ## Procedure
 
@@ -50,11 +50,9 @@ In this section, you will generate root/signer/device keys & certificates which 
 
     <img src=".//media/image_06.png" />
 
-12. When the provisioning process has successfully completed, the final output message displayed will be `"Done provisioning thing"`
+12. When the provisioning process has successfully completed, the final output message displayed will be `"Done provisioning thing"`.  If any errors were encountered, confirm that the `CURIOSITY` drive `letter` and COM port `number` of the `Curiosity Virtual COM Port` are all correctly set in the `sam_iot_cert_gen.bat` file
 
     <img src=".//media/image_07.png" />
-  
-    If any errors were encountered, confirm that the `CURIOSITY` drive `letter` and COM port `number` of the `Curiosity Virtual COM Port` are all correctly set in the `sam_iot_cert_gen.bat` file
 
 ## Examples of Certificates
 

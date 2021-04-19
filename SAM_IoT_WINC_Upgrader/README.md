@@ -2,7 +2,7 @@
 
 ## Overview
 
-This process programs the flash memory of the MCU (SAMD21) on the SAM-IoT board so any application firmware that was previously programmed will be overwritten.  The SAMD21 is basically programmed to act as a "serial bridge" between the Host PC updater utility (WINC Programming Tool) and the WINC1510 Wi-Fi network controller.
+This process requires programming the flash memory of the MCU (SAMD21) on the SAM-IoT board so any application firmware that was previously programmed will be overwritten.  The SAMD21 is basically programmed to act as a "serial bridge" between the Host PC updater utility (WINC Programming Tool) and the WINC1510 Wi-Fi network controller.
 
 ## Reprogram the WINC1510 FW using one of the existing `winc1500_X.Y.Z.prog` files (where X.Y.Z = WINC FW version)
 
@@ -30,15 +30,15 @@ This process programs the flash memory of the MCU (SAMD21) on the SAM-IoT board 
 
 8. Save the changes to the file and exit the text editor
 
-9. Open a `PowerShell` window > click on `Start` > type `PowerShell` in the Search field > `Open`.  Navigate to the `SAM_IoT_WINC_Upgrader` subfolder and then execute the following command (the update process should take approximately 15 minutes):
+9. Open a `PowerShell` window > click on `Start` > type `PowerShell` in the Search field > `Open`.  Navigate to the `SAM_IoT_WINC_Upgrader` subfolder and then execute the following command (once the batch file begins executing, the entire update process should take approximately 15 minutes to complete):
     ```
     .\sam_iot_winc_update
     ```
-    For example:
+    For example, the PowerShell commands could consist of the following:
 
     <img src=".//media/image_03.png" />
 
-    Here is an example of the expected output upon successful completion of running the batch file.  If any errors were encountered, confirm that the `CURIOSITY` drive `letter` and COM port `number` of the `Curiosity Virtual COM Port` are all correctly set in the `sam_iot_winc_update.bat` file.  
+    The below screenshot shows an example of the expected output upon successful completion of running the batch file.  When the firmware upgrade process has completed, the final output message displayed will be `"verify passed"`.  If any errors were encountered, confirm that the `CURIOSITY` drive `letter` and COM port `number` of the `Curiosity Virtual COM Port` are all correctly set in the `sam_iot_winc_update.bat` file.  
     
     <img src=".//media/image_04.png" />
 
