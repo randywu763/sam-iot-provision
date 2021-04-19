@@ -46,7 +46,7 @@ In this section, you will generate keys (root CA, signer CA) & certificates (roo
     ```
     .\sam_iot_cert_gen
     ```
-    For example:
+    For example, the `PowerShell` commands could consist of the following:
 
     <img src=".//media/image_06.png" />
 

@@ -34,7 +34,7 @@ This process requires programming the flash memory of the MCU (SAMD21) on the SA
     ```
     .\sam_iot_winc_update
     ```
-    For example, the PowerShell commands could consist of the following:
+    For example, the `PowerShell` commands could consist of the following:
 
     <img src=".//media/image_03.png" />
 
