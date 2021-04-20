@@ -1,10 +1,32 @@
-# Upgrading the WINC1510 Firmware on the SAM-IoT WG Development Board
+# Upgrading the WINC Firmware on the SAM-IoT WG Development Board
 
 ## Overview
 
 This process requires programming the flash memory of the MCU (SAMD21) on the SAM-IoT board so any application firmware that was previously programmed will be overwritten.  The SAMD21 is basically programmed to act as a "serial bridge" between the Host PC updater utility (WINC Programming Tool) and the WINC1510 Wi-Fi network controller.  Several pre-built device image files (*.prog), each corresponding to a specific WINC firmware binary version, are included in this repository, ready to be used by the WINC Programming Tool.
 
-## Reprogram the WINC1510 FW using an Existing `winc1500_X.Y.Z.prog` Device Image File (where X.Y.Z = WINC FW version)
+## Creating New WINC Device Image Files
+
+Perform this section only if a newer WINC1500 firmware binary file has been released and is not included (i.e. is not represented by an existing `winc1500_X.Y.Z` subfolder and the corresponding `winc1500_X.Y.Z.prog` file) in this repository.  A device image file (*.prog) needs to be created for every specific WINC FW version binary file (typically released as files named `wifi_firmware.bin`).  The device image file is used by the WINC Programming Tool.  If the WINC device image file for your desired firmware version to update your board already exists in this repo, skip to the next section.
+
+1. Copy one of the existing `winc1500_X.Y.Z` folders and rename it using the desired/newer WINC FW version (i.e. change `X.Y.Z` to reflect the newer FW version)
+
+2. Using a `File Explorer` window, navigate to the `firmware` subfolder inside the newly-created `winc1500_X.Y.Z` folder
+
+3. Replace the existing `wifi_firmware.bin` file with the desired/newer WINC binary image file (maintaining the same file name of `wifi_firmware.bin`)
+
+4. Move one directory upwards (into the newly-created `winc1500_X.Y.Z` parent folder) and open the `config.txt` file using any text editor.  Throughout the entire file, modify every instance of `X.Y.Z` to match the version of the newly-created `winc1500_X.Y.Z` folder
+
+    <img src=".//media/image_10.png" />
+
+5. Save your changes to the `config.txt` file and exit the text editor
+
+6. Open a `PowerShell` window (click on `Start` > type `PowerShell` in the Search field > `Open`).  Navigate to the `SAM_IoT_WINC_Upgrader` subfolder and then execute the following command (replacing `X.Y.Z` with the FW version numbers):
+    ```
+    .\image_tool.exe -c winc1500_X.Y.Z\config.txt -o winc1500_X.Y.Z.prog -of prog
+    ```
+    <img src=".//media/image_11.png" />
+
+## Reprogramming the WINC FW using an Existing Device Image File
 
 1. Connect the SAM-IoT WG Development Board to the Host PC using a standard micro-USB cable
 
@@ -71,25 +93,3 @@ This process requires programming the flash memory of the MCU (SAMD21) on the SA
 19. Drag-and-drop (i.e. copy) the `sam_iot_winc_version_verify.hex` file to the `CURIOSITY` drive.  Note the `Firmware Ver` message that is displayed in the terminal window to confirm the firmware version programmed inside the WINC1510 Wi-Fi network controller
 
     <img src=".//media/image_09.png" />
- 
-## Creating New `winc1500_X.Y.Z.prog` Device Image Files
-
-Perform this section if a newer WINC1500 firmware binary file has been released and is not included in this repository.  A device image file (*.prog) needs to be created for every specific WINC FW version binary file (typically released as files named `wifi_firmware.bin`).  The device image file is used by the WINC Programming Tool.
-
-1. Copy one of the existing `winc1500_X.Y.Z` folders and rename it using the desired/newer WINC FW version (i.e. change `X.Y.Z` to reflect the newer FW version)
-
-2. Using a `File Explorer` window, navigate to the `firmware` subfolder inside the newly-created `winc1500_X.Y.Z` folder
-
-3. Replace the existing `wifi_firmware.bin` file with the desired/newer WINC binary image file (maintaining the same file name of `wifi_firmware.bin`)
-
-4. Move one directory upwards (into the newly-created `winc1500_X.Y.Z` parent folder) and open the `config.txt` file using any text editor.  Throughout the entire file, modify every instance of `X.Y.Z` to match the version of the newly-created `winc1500_X.Y.Z` folder
-
-    <img src=".//media/image_10.png" />
-
-5. Save your changes to the `config.txt` file and exit the text editor
-
-6. Open a `PowerShell` window (click on `Start` > type `PowerShell` in the Search field > `Open`).  Navigate to the `SAM_IoT_WINC_Upgrader` subfolder and then execute the following command (replacing `X.Y.Z` with the FW version numbers):
-    ```
-    .\image_tool.exe -c winc1500_X.Y.Z\config.txt -o winc1500_X.Y.Z.prog -of prog
-    ```
-    <img src=".//media/image_11.png" />
