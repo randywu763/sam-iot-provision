@@ -84,11 +84,11 @@ Perform this section only if a newer WINC1500 firmware binary file has been rele
 
     <img src=".//media/image_07.png" />
 
-    The below screenshot shows an example of the expected output upon successful completion of running the batch file.  When the firmware upgrade process has completed, the final output message displayed will be `"verify passed"`.  If any errors were encountered, confirm that the `CURIOSITY` drive `letter` and COM port `number` of the `Curiosity Virtual COM Port` are all correctly set in the `sam_iot_winc_update.bat` file.  
+    The below screenshot shows an example of the expected output upon successful completion of running the batch file.  When the firmware upgrade process has completed, the final output message displayed will be `"verify passed"`.  If any errors were encountered, confirm that the `CURIOSITY` drive `letter` and COM port `number` of the `Curiosity Virtual COM Port` are all correctly set in the `sam_iot_winc_update.bat` file
     
     <img src=".//media/image_08.png" />
 
-18. To confirm that the correct WINC firmware version was programmed successfully, open a terminal emulator window (e.g. TeraTerm, PuTTY, Cmder, ZOC, ConEmu, Mintty, MobaXterm, Babun, KiTTY, Xshell, ConsoleZ, Console2, Hyper, FireCMD, Terminus, etc.) and connect to the Curiosity Virtual COM port at 9600 baud.
+18. To confirm that the correct WINC firmware version was programmed successfully, open a terminal emulator window (e.g. TeraTerm, PuTTY, Cmder, ZOC, ConEmu, Mintty, MobaXterm, Babun, KiTTY, Xshell, ConsoleZ, Console2, Hyper, FireCMD, Terminus, etc.) and connect to the Curiosity Virtual COM port at 9600 baud
 
 19. Drag-and-drop (i.e. copy) the `sam_iot_winc_version_verify.hex` file to the `CURIOSITY` drive.  Note the `Firmware Ver` message that is displayed in the terminal window to confirm the firmware version programmed inside the WINC1510 Wi-Fi network controller
 
