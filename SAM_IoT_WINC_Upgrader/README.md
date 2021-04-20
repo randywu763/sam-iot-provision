@@ -88,7 +88,7 @@ Perform this section if a newer WINC1500 firmware binary file has been released 
 
 5. Save your changes to the `config.txt` file and exit the text editor
 
-6. Open a `PowerShell` window (click on `Start` > type `PowerShell` in the Search field > `Open`).  Navigate to the `SAM_IoT_WINC_Upgrader` subfolder and then execute the following command:
+6. Open a `PowerShell` window (click on `Start` > type `PowerShell` in the Search field > `Open`).  Navigate to the `SAM_IoT_WINC_Upgrader` subfolder and then execute the following command (replacing `X.Y.Z` with the FW version numbers):
     ```
     .\image_tool.exe -c winc1500_X.Y.Z\config.txt -o winc1500_X.Y.Z.prog -of prog
     ```
