@@ -4,6 +4,8 @@
 
 In this section, you will generate keys (root CA, signer CA) & certificates (root CA, signer CA, device) which will be used to provision the WINC1510 Wi-Fi network controller on the SAM-IoT WG Development Board.  This process programs the flash memory of the MCU (SAMD21) on the SAM-IoT board so any application firmware that was previously programmed will be overwritten with this provisioning firmware.
 
+<img src=".//media/image_00.png" />
+
 ## Procedure
 
 1. Connect the SAM-IoT WG Development Board to the Host PC using a standard micro-USB cable

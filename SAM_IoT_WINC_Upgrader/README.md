@@ -4,6 +4,8 @@
 
 This process requires programming the flash memory of the MCU (SAMD21) on the SAM-IoT board so any application firmware that was previously programmed will be overwritten.  The SAMD21 is basically programmed to act as a "serial bridge" between the Host PC updater utility (WINC Programming Tool) and the WINC1510 Wi-Fi network controller.  Several pre-built device image files (*.prog), each corresponding to a specific WINC firmware binary version, are included in this repository, ready to be used by the WINC Programming Tool.
 
+<img src=".//media/image_00.png" />
+
 ## Creating New WINC Device Image Files
 
 Perform this section only if a newer WINC1500 firmware binary file has been released and is not included (i.e. is not represented by an existing `winc1500_X.Y.Z` subfolder and the corresponding `winc1500_X.Y.Z.prog` file) in this repository.  A device image file (*.prog) needs to be created for every specific WINC FW version binary file (typically released as files named `wifi_firmware.bin`).  The device image file is used by the WINC Programming Tool.  If the WINC device image file for your desired firmware version to update your board already exists in this repo, skip to the next section.
