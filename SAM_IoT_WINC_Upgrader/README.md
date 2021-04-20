@@ -4,7 +4,7 @@
 
 This process requires programming the flash memory of the MCU (SAMD21) on the SAM-IoT board so any application firmware that was previously programmed will be overwritten.  The SAMD21 is basically programmed to act as a "serial bridge" between the Host PC updater utility (WINC Programming Tool) and the WINC1510 Wi-Fi network controller.
 
-## Reprogram the WINC1510 FW using One of the Existing `winc1500_X.Y.Z.prog` Device Image Files (where X.Y.Z = WINC FW version)
+## Reprogram the WINC1510 FW using an Existing `winc1500_X.Y.Z.prog` Device Image File (where X.Y.Z = WINC FW version)
 
 1. Connect the SAM-IoT WG Development Board to the Host PC using a standard micro-USB cable
 
