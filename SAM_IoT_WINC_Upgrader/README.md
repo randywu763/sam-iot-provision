@@ -2,11 +2,29 @@
 
 ## Overview
 
-This process requires programming the flash memory of the MCU (SAMD21G18A) on the SAM-IoT board so any application firmware that was previously programmed will be overwritten.  The SAMD21 is basically programmed to act as a "serial bridge" between the Host PC updater utility (WINC Programming Tool) and the WINC1510 Wi-Fi network controller.  Several pre-built device image files (*.prog), each corresponding to a specific WINC firmware binary version, are included in this repository, ready to be used by the WINC Programming Tool.
+Execution of this process will require programming the flash memory of the MCU (SAMD21G18A) on the SAM-IoT board so any application firmware that was previously programmed will be overwritten.  The SAMD21 is basically programmed to act as a "serial bridge" between the Host PC updater utility (WINC Programming Tool) and the WINC1510 Wi-Fi network controller.  Several pre-built device image files (*.prog), each corresponding to a specific WINC firmware binary version, are included in this repository, ready to be used by the WINC Programming Tool.
 
 > `NOTE`: During the WINC firmware programming process, any certificates which were previously stored in the WINC's internal flash memory will be overwritten with default certificates.  Make sure to follow up this firmware update process with the [SAM-IoT Certificates Generator](../SAM_IoT_Certs_Generator/README.md) procedure.
 
 <img src=".//media/image_00.png" />
+
+## Confirm Existing WINC Firmware Version
+
+You can have the MCU on the SAM-IoT board output the version information for the firmware currently programmed in the WINC1510 Wi-Fi network controller.  If the existing WINC FW version displayed by performing the steps in this section turns out to be 19.6.5 or higher, then it is not absolutely necessary to upgrade the firmware (although it's always highly recommended to upgrade to the latest available version posted on the [WINC1500 product page](https://www.microchip.com/wwwproducts/en/ATWINC1500)).
+
+1. Connect the SAM-IoT WG Development Board to the Host PC using a standard micro-USB cable
+
+2. Open a terminal emulator window (e.g. TeraTerm, PuTTY, Cmder, ZOC, ConEmu, Mintty, MobaXterm, Babun, KiTTY, Xshell, ConsoleZ, Console2, Hyper, FireCMD, Terminus, etc.) and connect to the Curiosity Virtual COM port at 9600 baud
+
+    <img src=".//media/image_12.png" />
+
+    <img src=".//media/image_13.png" />
+
+3. Drag-and-drop (i.e. copy) the `sam_iot_winc_version_verify.hex` file to the `CURIOSITY` drive.  Note the `Firmware Ver` message that is displayed in the terminal window to find out the firmware version currently programmed inside the WINC1510 Wi-Fi network controller
+
+    <img src=".//media/image_09.png" />
+
+4. Exit the terminal emulator program to release the serial port connection to the Curiosity Virtual COM port
 
 ## Creating New WINC Device Image Files
 
@@ -101,3 +119,6 @@ Perform this section only if a newer WINC1500 firmware binary file has been rele
 19. Drag-and-drop (i.e. copy) the `sam_iot_winc_version_verify.hex` file to the `CURIOSITY` drive.  Note the `Firmware Ver` message that is displayed in the terminal window to confirm the firmware version programmed inside the WINC1510 Wi-Fi network controller
 
     <img src=".//media/image_09.png" />
+
+20. Exit the terminal emulator program to release the serial port connection to the Curiosity Virtual COM port
+
