@@ -1,1 +1,0 @@
-This folder contains an MPLAB X project that can be used to strictly program the `SAM_IoT_CertGen.hex` file
