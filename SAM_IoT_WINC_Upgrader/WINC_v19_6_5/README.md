@@ -20,7 +20,7 @@ You can have the MCU on the SAM-IoT board output the version information for the
 
     <img src=".//media/image_13.png" />
 
-3. Drag-and-drop (i.e. copy) the `sam_iot_winc_version_verify.hex` file to the `CURIOSITY` drive.  Note the `Firmware Ver` message that is displayed in the terminal window to find out the firmware version currently programmed inside the WINC1510 Wi-Fi network controller
+3. Drag-and-drop (i.e. copy) the `sam_iot_winc_version_verify.hex` file (located in the `SAM_IoT_WINC_Upgrader` folder) to the `CURIOSITY` drive.  Note the `Firmware Ver` message that is displayed in the terminal window to find out the firmware version currently programmed inside the WINC1510 Wi-Fi network controller
 
     <img src=".//media/image_09.png" />
 
@@ -94,7 +94,7 @@ You can have the MCU on the SAM-IoT board output the version information for the
 
     <img src=".//media/image_13.png" />
 
-19. Drag-and-drop (i.e. copy) the `sam_iot_winc_version_verify.hex` file to the `CURIOSITY` drive.  Note the `Firmware Ver` message that is displayed in the terminal window to confirm the firmware version programmed inside the WINC1510 Wi-Fi network controller
+19. Drag-and-drop (i.e. copy) the `sam_iot_winc_version_verify.hex` file (located in the `SAM_IoT_WINC_Upgrader` folder) to the `CURIOSITY` drive.  Note the `Firmware Ver` message that is displayed in the terminal window to confirm the firmware version programmed inside the WINC1510 Wi-Fi network controller
 
     <img src=".//media/image_09.png" />
 
