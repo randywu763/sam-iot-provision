@@ -1,1 +1,0 @@
-Placeholder for the folder that should contain certificate files.
