@@ -6,7 +6,7 @@ This Windows tools package is required for provisioning a Microchip SAM-IoT WG d
 
 > `NOTE`: This tools package will only work for Microchip development board Part No. EV75S95A.  Other variants of the SAM-IoT board (designated by different part numbers) will require different provisioning tools corresponding to those other boards.
 
-The Google Cloud Platform (GCP) does not use TLS client authentication (it uses JSON Web Token (JWT) in the MQTT password), so this provisioning tool is not required for use with GCP.
+The Google Cloud Platform (GCP) does not use TLS client authentication (it uses JSON Web Token (JWT) in the MQTT password), so this provisioning tool is not required for use with GCP services.
 
 The following two tasks are required to properly configure & provision the WINC1510 Wi-Fi network controller on the SAM-IoT WG development board:
 
@@ -14,9 +14,23 @@ The following two tasks are required to properly configure & provision the WINC1
 
     The WINC1510 internal firmware version must be at least 19.6.5 to support TLS client authentication using X.509 certificates.  It is recommended to use the latest firmware version that has been published on the [WINC1500 product page](https://www.microchip.com/wwwproducts/en/ATWINC1500).
 
-2. Certificates Generation/Storage into the WINC1510
+2. Device Certificate Generation and Storage into the WINC1510
 
-    X.509 certificates need to be generated and then stored into the WINC1510.
+    The X.509 device certificate (which is uniquely specific to each SAM-IoT development board) needs to be generated and then stored into the WINC1510.  The signer certificate needs to be stored into the WINC1510 as well.  Both signer and device certificates need to be used by the WINC1510 in order to complete the TLS handshake with the authentication server.
+    
+    This provisioning tool uses example "mock" root/signer keys/certificates during the generation phase of the device certificate.  If you want to use specific root and/or signer credentials, those files need to be copied over to replace the existing example "mock" credential files in the [./SAM_IoT_Certs_Generator/CertGen/cert/](./SAM_IoT_Certs_Generator/CertGen/cert/) folder.
+    
+    For example, to use a specific root certificate, the existing `root-ca.crt` file needs to be replaced with the desired root certificate.  Similarly, to use a specific signer certificate, the existing `signer-ca.crt` file needs to be replaced with the desired signer certificate.  You may also need to update/overwrite the existing files containing the keys (`*.key`) and the file containing the signer CSR (`signer-ca.csr`).
+
+## Mock Root and Signer Certificates
+
+1. Example "mock" `root` CA certificate provided as the default used by this tools package
+
+    <img src=".//media/Root_Cert_Info.png" />
+
+2. Example "mock" `signer` certificate provided as the default used by this tools package
+
+    <img src=".//media/Signer_Cert_Info.png" />
 
 ## Procedure
 
@@ -36,7 +50,7 @@ The following two tasks are required to properly configure & provision the WINC1
 
     > CALL sam-iot-provision `[arg1] [arg2] [arg3] [arg4]`
 
-6. Modify (if needed) the `first` argument for your desired Cloud service (aws or azure)
+6. Modify (if needed) the `first` argument for your desired Cloud service (e.g. aws or azure)
 
     > CALL sam-iot-provision `azure` 19.6.5 3 D
 
