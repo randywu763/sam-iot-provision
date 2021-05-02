@@ -34,7 +34,7 @@ The following two tasks are required to properly configure & provision the WINC1
 
 5. Locate the following line in the batch file and note the 4 command line arguments 
 
-    > CALL sam-iot-provision `arg1 arg2 arg3 arg4`
+    > CALL sam-iot-provision `[arg1] [arg2] [arg3] [arg4]`
 
 6. Modify (if needed) the `first` argument for your desired Cloud service (aws or azure)
 
@@ -57,3 +57,5 @@ The following two tasks are required to properly configure & provision the WINC1
 11. Open a command line window (e.g. Command Prompt or PowerShell) and execute the `iotprovision.bat` file
 
 12. When the provisioning script has completed execution, the files for the certificates and keys will appear in the `Certificates` folder
+
+    <img src=".//media/image_02.png" />

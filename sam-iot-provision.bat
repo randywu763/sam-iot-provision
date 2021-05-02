@@ -43,9 +43,12 @@ copy /Y root-ca.crt ..\..\..\%DIR_CERTIFICATES%
 copy /Y root-ca.key ..\..\..\%DIR_CERTIFICATES%
 move /Y root-ca.pem ..\..\..\%DIR_CERTIFICATES%
 copy /Y signer-ca.key ..\..\..\%DIR_CERTIFICATES%
+copy /Y signer-ca.crt ..\..\..\%DIR_CERTIFICATES%
 move /Y signer-ca.pem ..\..\..\%DIR_CERTIFICATES%
+copy /Y signer-ca-verification.crt ..\..\..\%DIR_CERTIFICATES%
 move /Y signer-ca-verification.pem ..\..\..\%DIR_CERTIFICATES%
 copy /Y device.key ..\..\..\%DIR_CERTIFICATES%
+copy /Y device.crt ..\..\..\%DIR_CERTIFICATES%
 move /Y device.pem ..\..\..\%DIR_CERTIFICATES%
 
 REM *** Programming Demo Application ***
