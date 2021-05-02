@@ -70,6 +70,6 @@ The following two tasks are required to properly configure & provision the WINC1
 
 11. Open a command line window (e.g. Command Prompt or PowerShell) and execute the `iotprovision.bat` file
 
-12. When the provisioning script has completed execution, the files for the certificates and keys can be found in the [./SAM_IoT_Certs_Generator/CertGen/cert/](./SAM_IoT_Certs_Generator/CertGen/cert/) folder
+12. When the provisioning script has completed execution, the files for the security certificates (`*.crt`), keys (`*.key`), and signing requests (`*.csr`) can all be accessed from the [./SAM_IoT_Certs_Generator/CertGen/cert/](./SAM_IoT_Certs_Generator/CertGen/cert/) folder
 
     <img src=".//media/image_02.png" />
