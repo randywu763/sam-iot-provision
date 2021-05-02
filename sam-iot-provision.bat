@@ -24,7 +24,6 @@ pip install -r py_modules.txt
 
 REM *** Generating Device Certificate ***
 REM *** Writing Certificates to WINC1510 ***
-cd ..
 CALL python provision_samiot.py com%comport%
 
 REM *** Programming Cloud Service Demo Application ***
