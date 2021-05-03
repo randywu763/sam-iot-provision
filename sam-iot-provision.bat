@@ -4,6 +4,7 @@ SET comport=%3
 SET drive=%4
 SET DIR_UPGRADER=SAM_IoT_WINC_Upgrader
 SET DIR_CERTGEN=SAM_IoT_Certs_Generator\CertGen
+SET DIR_CREDENTIALS=Credentials
 
 REM *** Programming Serial Bridge Firmware ***
 copy .\%DIR_UPGRADER%\sam_iot_serial_bridge.hex %drive%:\
@@ -24,12 +25,23 @@ pip install -r py_modules.txt
 
 REM *** Generating Certificates & Keys ***
 cd cert
+
+REM *** Deleting All Existing Keys ***
+erase *.key
+
 REM *** Generating ROOT Certificate & Key ***
 CALL python ca_create_root.py
 REM *** Generating SIGNER Key & Certificate Signing Request (CSR) ***
 CALL python ca_create_signer_csr.py
 REM *** Generating SIGNER Certificate ***
 CALL python ca_create_signer.py
+
+REM *** Setting Desired Chain of Trust ***
+copy /Y ..\..\%DIR_CREDENTIALS%\root-ca.crt
+copy /Y ..\..\%DIR_CREDENTIALS%\root-ca.key
+copy /Y ..\..\%DIR_CREDENTIALS%\signer-ca.crt
+copy /Y ..\..\%DIR_CREDENTIALS%\signer-ca.key
+copy /Y ..\..\%DIR_CREDENTIALS%\signer-ca.csr
 
 REM *** Provisioning SAM-IoT Development Board ***
 cd ..

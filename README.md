@@ -18,20 +18,12 @@ The following two tasks are required to properly configure & provision the WINC1
 
     The X.509 device certificate (which is uniquely specific to each SAM-IoT development board) needs to be generated and then stored into the WINC1510.  The signer certificate needs to be stored into the WINC1510 as well.  Both signer and device certificates need to be used by the WINC1510 in order to complete the TLS handshake with the authentication server.
     
-    This provisioning tool uses example "mock" root/signer keys/certificates during the generation phase of the device certificate.  If you want to use specific root and/or signer credentials, those files need to be copied over to replace the existing example "mock" credential files in the [./SAM_IoT_Certs_Generator/CertGen/cert/](./SAM_IoT_Certs_Generator/CertGen/cert/) folder.
+## Using a Specific Chain of Trust for Root CA and/or Signer
+
+This provisioning tool creates a mock chain of trust before generating the device certificate.  If you want to use specific root and/or signer credentials, those files need to be copied into the [./SAM_IoT_Certs_Generator/Credentials/](./SAM_IoT_Certs_Generator/Credentials/) folder.
+
+<img src=".//media/image_03.png" />
     
-    For example, to use a specific root certificate, the existing `root-ca.crt` file needs to be replaced with the desired root certificate.  Similarly, to use a specific signer certificate, the existing `signer-ca.crt` file needs to be replaced with the desired signer certificate.  You may also need to update/overwrite the existing files containing the keys (`*.key`) and the file containing the signer CSR (`signer-ca.csr`).
-
-## Mock Root and Signer Certificates
-
-1. Example "mock" `root` CA certificate provided as the default used by this tools package
-
-    <img src=".//media/Root_Cert_Info.png" />
-
-2. Example "mock" `signer` certificate provided as the default used by this tools package
-
-    <img src=".//media/Signer_Cert_Info.png" />
-
 ## Procedure
 
 1. Connect the SAM-IoT WG Development Board to the Host PC (running Windows) using a standard micro-USB cable
@@ -73,3 +65,9 @@ The following two tasks are required to properly configure & provision the WINC1
 12. When the provisioning script has completed execution, the files for the security certificates (`*.crt`), keys (`*.key`), and signing requests (`*.csr`) can all be accessed from the [./SAM_IoT_Certs_Generator/CertGen/cert/](./SAM_IoT_Certs_Generator/CertGen/cert/) folder
 
     <img src=".//media/image_02.png" />
+
+13. To reuse the example mock chain of trust (that was created during this process) when executing the provisioning script again (e.g. for provisioning additional SAM-IoT WG development boards in the future to be added as part of a group enrollment), copy the following files from the [./SAM_IoT_Certs_Generator/CertGen/cert/](./SAM_IoT_Certs_Generator/CertGen/cert/) folder into the [./SAM_IoT_Certs_Generator/Credentials/](./SAM_IoT_Certs_Generator/Credentials/) folder
+
+    <img src=".//media/image_03.png" />
+    
+    NOTE: Whenever the provisioning batch file is executed, it uses any existing chain of trust files that are in the [./SAM_IoT_Certs_Generator/Credentials/](./SAM_IoT_Certs_Generator/Credentials/) folder
