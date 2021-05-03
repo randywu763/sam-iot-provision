@@ -22,6 +22,17 @@ REM *** Updating Python Modules ***
 python -m pip install --upgrade pip
 pip install -r py_modules.txt
 
+REM *** Generating Certificates & Keys ***
+cd cert
+REM *** Generating ROOT Certificate & Key ***
+CALL python ca_create_root.py
+REM *** Generating SIGNER Key & Certificate Signing Request (CSR) ***
+CALL python ca_create_signer_csr.py
+REM *** Generating SIGNER Certificate ***
+CALL python ca_create_signer.py
+
+REM *** Provisioning SAM-IoT Development Board ***
+cd ..
 REM *** Generating Device Certificate ***
 REM *** Writing Certificates to WINC1510 ***
 CALL python provision_samiot.py com%comport%
