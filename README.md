@@ -84,6 +84,6 @@ The following shows mock certificates that the provisioning tool can generate fo
 
 7. Open a command line window (e.g. Command Prompt, PowerShell) and execute `.\iotprovision.bat`
 
-8. When the provisioning script has completed execution, the files for the security certificates (`*.crt`), keys (`*.key`), and signing requests (`*.csr`) can all be accessed from the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder
+8. When the provisioning script has completed execution, the files for the security certificates (`*.crt`/`*.pem`), keys (`*.key`), and signing requests (`*.csr`) can all be accessed from the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder
 
     <img src=".//media/image_03.png" />
