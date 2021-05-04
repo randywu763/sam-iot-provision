@@ -60,19 +60,19 @@ The following shows mock certificates that the provisioning tool can generate fo
 
     > CALL sam-iot-provision `[arg1] [arg2] [arg3] [arg4]`
 
-6. Modify (if needed) the `first` argument for your desired Cloud service (e.g. aws or azure)
+6. Modify (if needed) the **first** argument for your desired Cloud service (e.g. aws or azure)
 
     > CALL sam-iot-provision `azure` 19.7.3 3 D
 
-7. Modify (if needed) the `second` argument which sets the target WINC firmware version to be programmed
+7. Modify (if needed) the **second** argument which sets the target WINC firmware version to be programmed
 
     > CALL sam-iot-provision azure `19.7.3` 3 D
 
-8. Modify (if needed) the `third` argument to match your Curiosity Virtual COM port `number`
+8. Modify (if needed) the **third** argument to match your Curiosity Virtual COM port `number`
 
     > CALL sam-iot-provision azure 19.7.3 `3` D
 
-9. Modify (if needed) the `fourth` argument for the drive `letter` corresponding to CURIOSITY
+9. Modify (if needed) the **fourth** argument for the drive `letter` corresponding to CURIOSITY
 
     > CALL sam-iot-provision azure 19.7.3 3 `D`
 
