@@ -46,11 +46,11 @@ The following shows mock certificates that the provisioning tool can generate fo
 
 1. Connect the SAM-IoT WG Development Board to the Host PC (running Windows) using a standard micro-USB cable
 
-2. Open a `File Explorer` window and determine the drive `letter` that Windows assigned to `CURIOSITY` 
+2. Open a **File Explorer** window and determine the drive `letter` that Windows assigned to `CURIOSITY` 
 
     <img src=".//media/image_01.png" />
 
-3. Determine the COM port number for your `Curiosity Virtual COM port`.  You can find the COM port number by opening the Windows `Device Manager` &gt; expand `Ports(COM & LPT)` &gt; take note of the specific `(COM<X>)` associated with the Curiosity Virtual COM Port
+3. Determine the COM port number for your `Curiosity Virtual COM port`.  You can find the COM port number by opening the Windows **Device Manager** &gt; expand `Ports(COM & LPT)` &gt; take note of the specific `(COM<X>)` associated with the Curiosity Virtual COM Port
 
     <img src=".//media/image_02.png" />
 
@@ -58,19 +58,19 @@ The following shows mock certificates that the provisioning tool can generate fo
 
 5. Locate the following line in the batch file and note the 4 command line arguments 
 
-    > CALL sam-iot-provision `[arg1] [arg2] [arg3] [arg4]`
+    > CALL sam-iot-provision.bat `[arg1] [arg2] [arg3] [arg4]`
 
 6. Modify (if needed) the **first** argument for your desired Cloud service (e.g. aws or azure)
 
-    > CALL sam-iot-provision `azure` 19.7.3 3 D
+    > CALL sam-iot-provision.bat `azure` 19.7.3 3 D
 
 7. Modify (if needed) the **second** argument which sets the target WINC firmware version to be programmed
 
-    > CALL sam-iot-provision azure `19.7.3` 3 D
+    > CALL sam-iot-provision.bat azure `19.7.3` 3 D
 
 8. Modify (if needed) the **third** argument to match your Curiosity Virtual COM port `number`
 
-    > CALL sam-iot-provision azure 19.7.3 `3` D
+    > CALL sam-iot-provision.bat azure 19.7.3 `3` D
 
 9. Modify (if needed) the **fourth** argument for the drive `letter` corresponding to CURIOSITY
 
