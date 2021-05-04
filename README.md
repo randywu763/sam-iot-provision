@@ -74,7 +74,7 @@ The following shows mock certificates that the provisioning tool can generate fo
 
 9. Modify (if needed) the **fourth** argument for the drive `letter` corresponding to CURIOSITY
 
-    > CALL sam-iot-provision azure 19.7.3 3 `D`
+    > CALL sam-iot-provision.bat azure 19.7.3 3 `D`
 
 10. Save the changes to the batch file and exit the text editor
 
