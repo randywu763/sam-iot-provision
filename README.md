@@ -34,11 +34,11 @@ In summary, at the time the provisioning script is launched:
 
 The following shows mock certificates that the provisioning tool can generate for evaluation purposes:
 
-1. **Root** Certificate issued by Root CA & Microchip Technology Inc
+1. **Root** Certificate issued by Root CA from Microchip Technology Inc
 
     <img src=".//media/Root_Cert_Info.png" />
 
-2. **Signer** Certificate issued by Root CA & Microchip Technology Inc
+2. **Signer** Certificate issued by Root CA from Microchip Technology Inc
 
     <img src=".//media/Signer_Cert_Info.png" />
 
