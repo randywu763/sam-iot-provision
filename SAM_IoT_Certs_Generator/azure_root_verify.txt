@@ -1,0 +1,3 @@
+openssl req -new -key root-ca.key -out azure_root_ca_verification.csr
+
+openssl x509 -req -in azure_root_ca_verification.csr -CA root-ca.crt -CAkey root-ca.key -CAcreateserial -out azure_signer_verification.cer -days 365 -sha256

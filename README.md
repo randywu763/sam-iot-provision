@@ -18,23 +18,41 @@ The following two tasks are required to properly configure & provision the WINC1
 
     The X.509 device certificate (which is uniquely specific to each SAM-IoT development board) needs to be generated and then stored into the WINC1510.  The signer certificate needs to be stored into the WINC1510 as well.  Both signer and device certificates need to be used by the WINC1510 in order to complete the TLS handshake with the authentication server.
     
-## Using a Specific Chain of Trust for Root CA and/or Signer
+## Chain of Trust
 
-This provisioning tool creates a mock chain of trust before generating the device certificate.  If you want to use specific root and/or signer credentials, those files need to be copied into the [./SAM_IoT_Certs_Generator/Credentials/](./SAM_IoT_Certs_Generator/Credentials/) folder.
+By default, this provisioning tool is configured to create a mock chain of trust before generating the device certificate (the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder is initially empty so the tool will recognize this). To use specific root and/or signer credentials, those files need to be copied into the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder (the **exact** file names as shown below need to be used in order for the tool to recognize the purpose/contents of each file).
 
-<img src=".//media/image_03.png" />
-    
+<img src=".//media/image_00.png" />
+
+In summary, at the time the provisioning script is launched:
+
+- If the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder is `empty` (the default state before the provisioning script is executed for the first time), the tool will generate a mock chain of trust (root key/certificate, signer key/certificate/CSR)
+- If the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder is `populated`, the tool uses that set of files for the Chain of Trust
+- Whatever set of Chain of Trust files is used during provisioning will be automatically saved to the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder so that the same credentials will be used the next time the tool is invoked (i.e. whenever the provisioning script is launched again)
+
+## Examples of Mock Certificates
+
+The following shows mock certificates that the provisioning tool can generate for evaluation purposes:
+
+1. `Root` Certificate issued by **Microchip Technology Inc**
+
+    <img src=".//media/Root_Cert_Info.png" />
+
+2. `Signer` Certificate issued by **Microchip Technology Inc**
+
+    <img src=".//media/Signer_Cert_Info.png" />
+
 ## Procedure
 
 1. Connect the SAM-IoT WG Development Board to the Host PC (running Windows) using a standard micro-USB cable
 
 2. Open a `File Explorer` window and determine the drive `letter` that Windows assigned to `CURIOSITY` 
 
-    <img src=".//media/image_00.png" />
+    <img src=".//media/image_01.png" />
 
 3. Determine the COM port number for your `Curiosity Virtual COM port`.  You can find the COM port number by opening the Windows `Device Manager` &gt; expand `Ports(COM & LPT)` &gt; take note of the specific `(COM<X>)` associated with the Curiosity Virtual COM Port
 
-    <img src=".//media/image_01.png" />
+    <img src=".//media/image_02.png" />
 
 4. Edit the `iotprovision.bat` file using any text editor of your choice
 
@@ -62,12 +80,6 @@ This provisioning tool creates a mock chain of trust before generating the devic
 
 11. Open a command line window (e.g. Command Prompt or PowerShell) and execute the `iotprovision.bat` file
 
-12. When the provisioning script has completed execution, the files for the security certificates (`*.crt`), keys (`*.key`), and signing requests (`*.csr`) can all be accessed from the [./SAM_IoT_Certs_Generator/CertGen/cert/](./SAM_IoT_Certs_Generator/CertGen/cert/) folder
-
-    <img src=".//media/image_02.png" />
-
-13. To reuse the example mock chain of trust (that was created during this process) when executing the provisioning script again (e.g. for provisioning additional SAM-IoT WG development boards in the future to be added as part of a group enrollment), copy the following files from the [./SAM_IoT_Certs_Generator/CertGen/cert/](./SAM_IoT_Certs_Generator/CertGen/cert/) folder into the [./SAM_IoT_Certs_Generator/Credentials/](./SAM_IoT_Certs_Generator/Credentials/) folder
+12. When the provisioning script has completed execution, the files for the security certificates (`*.crt`), keys (`*.key`), and signing requests (`*.csr`) can all be accessed from the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder
 
     <img src=".//media/image_03.png" />
-    
-    NOTE: Whenever the provisioning batch file is executed, it uses any existing chain of trust files that are in the [./SAM_IoT_Certs_Generator/Credentials/](./SAM_IoT_Certs_Generator/Credentials/) folder

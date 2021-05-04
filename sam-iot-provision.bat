@@ -1,54 +1,118 @@
+@ECHO off
+
+REM <Clear the screen>
+cls
+
 SET cloud=%1
 SET wincver=%2
 SET comport=%3
 SET drive=%4
 SET DIR_UPGRADER=SAM_IoT_WINC_Upgrader
 SET DIR_CERTGEN=SAM_IoT_Certs_Generator\CertGen
-SET DIR_CREDENTIALS=Credentials
+SET DIR_CREDENTIALS=ChainOfTrust
 
-REM *** Programming Serial Bridge Firmware ***
+REM <Display the current date and time>
+ECHO.
+ECHO Provisioning Script STARTED on
+date /T
+echo at
+time /T
+ECHO.
+
+ECHO.
+ECHO *** Programming Serial Bridge Firmware into MCU ***
+ECHO.
 copy .\%DIR_UPGRADER%\sam_iot_serial_bridge.hex %drive%:\
 
-REM *** Launching WINC Programming Tool ***
+ECHO.
+ECHO *** Launching WINC Programming Utilities ***
+ECHO.
+ECHO *** (Now might be a good time for a 15-minute coffee break) ***
+ECHO.
 cd .\%DIR_UPGRADER%\%wincver%
-CALL download_all.bat UART SAMD21 3A0 0 %comport%
+IF %wincver%==19.6.5 (CALL download_all.bat UART SAMD21 3A0 0 %comport%)
+IF %wincver%==19.7.3 (CALL download_all.bat UART 1500 0 %comport%)
 
-@ECHO on
-
-REM *** Programming Provisioning Firmware ***
+ECHO.
+ECHO *** Programming Provisioning Firmware into MCU ***
+ECHO.
 cd ..\..\%DIR_CERTGEN%
 copy SAM_IoT_CertGen.hex %drive%:\
 
-REM *** Updating Python Modules ***
+ECHO.
+ECHO *** Updating Python Modules (if needed) ***
+ECHO.
 python -m pip install --upgrade pip
 pip install -r py_modules.txt
 
-REM *** Generating Certificates & Keys ***
+ECHO.
+ECHO *** Preparing Chain of Trust ***
+ECHO.
 cd cert
 
-REM *** Deleting All Existing Keys ***
+ECHO.
+ECHO *** Deleting Existing Certificates ***
+erase *.crt
+erase *.pem
+ECHO.
+ECHO *** Deleting Existing Keys ***
 erase *.key
+ECHO.
+ECHO *** Deleting Existing CSRs ***
+erase *.csr
+ECHO.
 
-REM *** Generating ROOT Certificate & Key ***
+ECHO.
+ECHO *** Generating Root Certificate and Key ***
 CALL python ca_create_root.py
-REM *** Generating SIGNER Key & Certificate Signing Request (CSR) ***
+ECHO.
+ECHO *** Generating Signer Key and Certificate Signing Request (CSR) ***
 CALL python ca_create_signer_csr.py
-REM *** Generating SIGNER Certificate ***
+ECHO.
+ECHO *** Generating Signer Certificate ***
 CALL python ca_create_signer.py
 
-REM *** Setting Desired Chain of Trust ***
+ECHO.
+ECHO *** Loading Desired Chain of Trust ***
+ECHO *** (if none found, the newly-created mock chain will be used) ***
+ECHO.
 copy /Y ..\..\%DIR_CREDENTIALS%\root-ca.crt
 copy /Y ..\..\%DIR_CREDENTIALS%\root-ca.key
 copy /Y ..\..\%DIR_CREDENTIALS%\signer-ca.crt
 copy /Y ..\..\%DIR_CREDENTIALS%\signer-ca.key
 copy /Y ..\..\%DIR_CREDENTIALS%\signer-ca.csr
 
-REM *** Provisioning SAM-IoT Development Board ***
+ECHO.
+ECHO *** Generating Device Certificate and Writing Signer/Device Certs into WINC1510 ***
 cd ..
-REM *** Generating Device Certificate ***
-REM *** Writing Certificates to WINC1510 ***
 CALL python provision_samiot.py com%comport%
 
-REM *** Programming Cloud Service Demo Application ***
-cd ..\..
-IF %cloud%==azure copy AzureIotPnpDps.X.production.hex %drive%:\
+ECHO.
+ECHO *** Saving Current Chain of Trust ***
+ECHO.
+cd cert
+copy /Y root-ca.crt ..\..\%DIR_CREDENTIALS%
+copy /Y root-ca.crt ..\..\%DIR_CREDENTIALS%\root-ca.pem
+copy /Y root-ca.key ..\..\%DIR_CREDENTIALS%
+copy /Y signer-ca.crt ..\..\%DIR_CREDENTIALS%
+copy /Y signer-ca.crt ..\..\%DIR_CREDENTIALS%\signer-ca.pem
+copy /Y signer-ca.key ..\..\%DIR_CREDENTIALS%
+copy /Y signer-ca.csr ..\..\%DIR_CREDENTIALS%
+
+ECHO.
+ECHO ***  Programming Cloud Service Demo Application into MCU  ***
+ECHO *** (Please be patient; this could take up to 60 seconds) ***
+ECHO.
+cd ..\..\..
+IF %cloud%==azure (copy AzureIotPnpDps.X.production.hex %drive%:\)
+
+ECHO.
+ECHO *** Provisioning SAM-IoT Development Board COMPLETED ***
+ECHO.
+
+REM <Display the current date and time>
+ECHO Provisioning Script ENDED on
+date /T
+echo at
+time /T
+ECHO.
