@@ -28,7 +28,7 @@ In summary, at the time the provisioning script is launched:
 
 - If the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder is **empty** (the default state before the provisioning script is executed for the first time), the tool will generate a mock chain of trust (root key/certificate, signer key/certificate/CSR)
 - If the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder is **populated**, the tool uses that set of files for the Chain of Trust
-- Whatever set of Chain of Trust files is used during provisioning will be automatically saved to the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder so that the same credentials will be used the next time the tool is invoked (i.e. whenever the provisioning script is launched again)
+- Whatever set of Chain of Trust files is used during provisioning will be automatically saved to the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder so that the same root and/or signer credentials will be used the next time the tool is invoked (i.e. whenever the provisioning script is launched again)
 
 ## Examples of Mock Certificates
 
