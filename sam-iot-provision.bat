@@ -94,7 +94,7 @@ copy /Y signer-ca.crt ..\..\%DIR_CREDENTIALS%\signer-ca.pem
 copy /Y signer-ca.key ..\..\%DIR_CREDENTIALS%
 copy /Y signer-ca.csr ..\..\%DIR_CREDENTIALS%
 copy /Y device.crt ..\..\%DIR_CREDENTIALS%
-copy /Y device.pem ..\..\%DIR_CREDENTIALS%\device.pem
+copy /Y device.crt ..\..\%DIR_CREDENTIALS%\device.pem
 
 ECHO.
 ECHO ***  Programming Cloud Service Demo Application into MCU  ***
