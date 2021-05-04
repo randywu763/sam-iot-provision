@@ -26,19 +26,19 @@ By default, this provisioning tool is configured to create a mock chain of trust
 
 In summary, at the time the provisioning script is launched:
 
-- If the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder is `empty` (the default state before the provisioning script is executed for the first time), the tool will generate a mock chain of trust (root key/certificate, signer key/certificate/CSR)
-- If the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder is `populated`, the tool uses that set of files for the Chain of Trust
+- If the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder is **empty** (the default state before the provisioning script is executed for the first time), the tool will generate a mock chain of trust (root key/certificate, signer key/certificate/CSR)
+- If the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder is **populated**, the tool uses that set of files for the Chain of Trust
 - Whatever set of Chain of Trust files is used during provisioning will be automatically saved to the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder so that the same credentials will be used the next time the tool is invoked (i.e. whenever the provisioning script is launched again)
 
 ## Examples of Mock Certificates
 
 The following shows mock certificates that the provisioning tool can generate for evaluation purposes:
 
-1. `Root` Certificate issued by **Microchip Technology Inc**
+1. **Root** Certificate issued by Root CA & Microchip Technology Inc
 
     <img src=".//media/Root_Cert_Info.png" />
 
-2. `Signer` Certificate issued by **Microchip Technology Inc**
+2. **Signer** Certificate issued by Root CA & Microchip Technology Inc
 
     <img src=".//media/Signer_Cert_Info.png" />
 
@@ -62,19 +62,19 @@ The following shows mock certificates that the provisioning tool can generate fo
 
 6. Modify (if needed) the `first` argument for your desired Cloud service (e.g. aws or azure)
 
-    > CALL sam-iot-provision `azure` 19.6.5 3 D
+    > CALL sam-iot-provision `azure` 19.7.3 3 D
 
 7. Modify (if needed) the `second` argument which sets the target WINC firmware version to be programmed
 
-    > CALL sam-iot-provision azure `19.6.5` 3 D
+    > CALL sam-iot-provision azure `19.7.3` 3 D
 
 8. Modify (if needed) the `third` argument to match your Curiosity Virtual COM port `number`
 
-    > CALL sam-iot-provision azure 19.6.5 `3` D
+    > CALL sam-iot-provision azure 19.7.3 `3` D
 
 9. Modify (if needed) the `fourth` argument for the drive `letter` corresponding to CURIOSITY
 
-    > CALL sam-iot-provision azure 19.6.5 3 `D`
+    > CALL sam-iot-provision azure 19.7.3 3 `D`
 
 10. Save the changes to the batch file and exit the text editor
 
