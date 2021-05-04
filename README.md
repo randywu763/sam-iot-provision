@@ -56,30 +56,30 @@ The following shows mock certificates that the provisioning tool can generate fo
 
 4. Edit the `iotprovision.bat` file using any text editor of your choice
 
-5. Locate the following line in the batch file and note the 4 command line arguments 
+5. Locate the following line in the batch file and note that 4 command line arguments need to be set 
 
     > CALL sam-iot-provision.bat `[arg1] [arg2] [arg3] [arg4]`
 
-6. Modify (if needed) the **first** argument for your desired Cloud service (e.g. aws or azure)
+    - Set the **first** argument for your desired Cloud service (e.g. aws or azure)
 
-    > CALL sam-iot-provision.bat `azure` 19.7.3 3 D
+        > CALL sam-iot-provision.bat `azure` 19.7.3 3 D
 
-7. Modify (if needed) the **second** argument which sets the target WINC firmware version to be programmed
+    - Set the **second** argument which sets the target WINC firmware version to be programmed
 
-    > CALL sam-iot-provision.bat azure `19.7.3` 3 D
+        > CALL sam-iot-provision.bat azure `19.7.3` 3 D
 
-8. Modify (if needed) the **third** argument to match your Curiosity Virtual COM port `number`
+    - Set the **third** argument to match your Curiosity Virtual COM port `number`
 
-    > CALL sam-iot-provision.bat azure 19.7.3 `3` D
+        > CALL sam-iot-provision.bat azure 19.7.3 `3` D
 
-9. Modify (if needed) the **fourth** argument for the drive `letter` corresponding to CURIOSITY
+    - Set the **fourth** argument for the drive `letter` corresponding to CURIOSITY
 
-    > CALL sam-iot-provision.bat azure 19.7.3 3 `D`
+        > CALL sam-iot-provision.bat azure 19.7.3 3 `D`
 
-10. Save the changes to the batch file and exit the text editor
+6. Save the changes to the batch file and exit the text editor
 
-11. Open a command line window (e.g. Command Prompt or PowerShell) and execute the `iotprovision.bat` file
+7. Open a command line window (e.g. Command Prompt, PowerShell) and execute `.\iotprovision.bat`
 
-12. When the provisioning script has completed execution, the files for the security certificates (`*.crt`), keys (`*.key`), and signing requests (`*.csr`) can all be accessed from the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder
+8. When the provisioning script has completed execution, the files for the security certificates (`*.crt`), keys (`*.key`), and signing requests (`*.csr`) can all be accessed from the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder
 
     <img src=".//media/image_03.png" />
