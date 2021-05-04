@@ -13,13 +13,10 @@ SET DIR_CREDENTIALS=ChainOfTrust
 
 REM <Display the current date and time>
 ECHO.
-ECHO.
 ECHO Provisioning Script STARTED at %TIME% (%DATE%)
-set startHH24=%TIME: =0%
-set startHH24=%HH:~0,2%
-set startMI=%TIME:~3,2%
-set startSS=%TIME:~6,2%
-set startFF=%TIME:~9,2%
+REM <Convert start and end times to hundredths of a second>
+Call :s_calc_timecode %TIME%
+Set _start_timecode=%errorlevel%
 
 ECHO.
 ECHO *** Programming Serial Bridge Firmware into MCU ***
@@ -48,20 +45,18 @@ pip install -r py_modules.txt
 
 ECHO.
 ECHO *** Preparing Chain of Trust ***
-ECHO.
 cd cert
 
 ECHO.
-ECHO *** Deleting Existing Certificates ***
+ECHO *** Deleting Existing Certificates from Working Directory ***
 erase *.crt
 erase *.pem
 ECHO.
-ECHO *** Deleting Existing Keys ***
+ECHO *** Deleting Existing Keys from Working Directory ***
 erase *.key
 ECHO.
-ECHO *** Deleting Existing CSRs ***
+ECHO *** Deleting Existing CSRs from Working Directory ***
 erase *.csr
-ECHO.
 
 ECHO.
 ECHO *** Generating Root Certificate and Key ***
@@ -76,7 +71,6 @@ CALL python ca_create_signer.py
 ECHO.
 ECHO *** Loading Desired Chain of Trust ***
 ECHO *** (if none found, the newly-created mock chain will be used) ***
-ECHO.
 copy /Y ..\..\%DIR_CREDENTIALS%\root-ca.crt
 copy /Y ..\..\%DIR_CREDENTIALS%\root-ca.key
 copy /Y ..\..\%DIR_CREDENTIALS%\signer-ca.crt
@@ -102,7 +96,7 @@ copy /Y signer-ca.csr ..\..\%DIR_CREDENTIALS%
 
 ECHO.
 ECHO ***  Programming Cloud Service Demo Application into MCU  ***
-ECHO *** (Please be patient; this could take up to 60 seconds) ***
+ECHO *** (Please be patient; this could take up to a minute or more) ***
 ECHO.
 cd ..\..\..
 IF %cloud%==azure (copy AzureIotPnpDps.X.production.hex %drive%:\)
@@ -113,14 +107,55 @@ ECHO.
 
 REM <Display the current date and time>
 ECHO Provisioning Script ENDED at %TIME% (%DATE%)
-set endHH24=%TIME: =0%
-set endHH24=%HH:~0,2%
-set endMI=%TIME:~3,2%
-set endSS=%TIME:~6,2%
-set endFF=%TIME:~9,2%
 
-REM <Calculate duration of provisioning process in minutes>
+REM <Convert end time to hundredths of a second>
+Call :s_calc_timecode %TIME%
+Set _stop_timecode=%errorlevel%
+
+REM <Calculate the difference in hundredths of a second>
+Set /a _diff_timecode=_stop_timecode - _start_timecode
+
+REM <Account for midnight rollover>
+if %_diff_timecode% LSS 0 set /a _diff_timecode+=(24 * 60 * 60 * 100)
+
+REM <Split out hours/mins/secs and calculate the time difference>
+set /a hs=_diff_timecode %% 100
+set /a _diff_timecode/=100
+set /a ss=_diff_timecode %% 60
+set /a _diff_timecode/=60
+set /a mm=_diff_timecode %% 60
+set /a _diff_timecode/=60
+set /a hh=_diff_timecode
+set hh=0%hh%
+set mm=0%mm%
+set ss=0%ss%
+set hs=0%hs%
+set _tdiff=%hh:~-2%:%mm:~-2%:%ss:~-2%.%hs:~-2%
+
 ECHO.
-SET /A minutes = (endMI - startMI)
-IF %minutes%==0 (ECHO The total provisioning time took less than a minute which means something went wrong...) ELSE (ECHO The total provisioning time took approximately %minutes% mins)
+ECHO The total provisioning time was %_tdiff% [HH:MM:SS.HS]
 ECHO.
+
+goto :EOF
+
+:s_calc_timecode
+   :: Remove delimiters and convert to hundredths of a second.
+  setlocal
+
+  For /f "usebackq tokens=1,2,3,4 delims=:." %%a in ('%1') Do (
+      set hh=00%%a
+      set mm=00%%b
+      set ss=00%%c
+      set hs=00%%d
+  )
+   set hh=%hh:~-2%
+   set mm=%mm:~-2%
+   set ss=%ss:~-2%
+   set hs=%hs:~-2%
+   set /a hh=((%hh:~0,1% * 10) + %hh:~1,1%) * 60 * 60 * 100
+   set /a mm=((%mm:~0,1% * 10) + %mm:~1,1%) * 60 * 100
+   set /a ss=((%ss:~0,1% * 10) + %ss:~1,1%) * 100
+   set /a hs=((%hs:~0,1% * 10) + %hs:~1,1%)
+   
+   set /a _timecode=hh + mm + ss + hs
+Exit /b %_timecode%
