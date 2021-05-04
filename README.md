@@ -42,6 +42,10 @@ The following shows mock certificates that the provisioning tool can generate fo
 
     <img src=".//media/Signer_Cert_Info.png" />
 
+3. **Device** Certificate issued by Microsoft Signer from Microsoft Inc
+
+    <img src=".//media/Device_Cert_Info.png" />
+
 ## Procedure
 
 1. Connect the SAM-IoT WG Development Board to the Host PC (running Windows) using a standard micro-USB cable
