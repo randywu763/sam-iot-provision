@@ -68,7 +68,7 @@ The following shows mock certificates that the provisioning tool can generate fo
 
         > CALL sam-iot-provision.bat `azure` 19.7.3 3 D
 
-    - Set the **second** argument which sets the target WINC firmware version to be programmed
+    - Set the **second** argument which sets the target WINC firmware version to be programmed (view the contents of the [SAM_IoT_WINC_Upgrader](./SAM_IoT_WINC_Upgrader/) folder for the various versions of firmware available for upgrade)
 
         > CALL sam-iot-provision.bat azure `19.7.3` 3 D
 
