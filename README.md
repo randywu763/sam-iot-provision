@@ -12,7 +12,7 @@ The following two tasks are required to properly configure & provision the WINC1
 
 1. WINC1510 Internal Firmware Upgrade
 
-    The WINC1510 internal firmware version must be at least 19.6.5 to support TLS client authentication using X.509 certificates.  It is recommended to use the latest firmware version that has been published on the [WINC1500 product page](https://www.microchip.com/wwwproducts/en/ATWINC1500).
+    The WINC1510 internal firmware version must be at least 19.6.5 to support TLS client authentication using X.509 certificates.  It is recommended to use the latest firmware version that has been published on the [WINC1500 product page](https://www.microchip.com/wwwproducts/en/ATWINC1500).  View the contents of the [SAM_IoT_WINC_Upgrader](./SAM_IoT_WINC_Upgrader/) folder for the various versions of firmware included in this tools package.
 
 2. Device Certificate Generation and Storage into the WINC1510
 
@@ -32,7 +32,7 @@ In summary, at the time the provisioning script is launched:
 
 ## Examples of Mock Certificates
 
-The following shows mock certificates that the provisioning tool can generate for evaluation purposes:
+The following shows mock certificates that the provisioning tool can generate (recommended for evaluation purposes only):
 
 1. **Root** Certificate issued by Root CA from Microchip Technology Inc
 
@@ -46,7 +46,20 @@ The following shows mock certificates that the provisioning tool can generate fo
 
     <img src=".//media/Device_Cert_Info.png" />
 
-## Procedure
+## Software Prerequisites
+
+As a prerequisite to using this provisioning tools package, Python is required to be installed in order to run the automated scripts.  Even if some version of Python has already been installed previously, it is recommended to update to the latest version.
+
+1. Download the latest [Python](https://www.python.org/downloads/) release
+
+2. Launch the installation setup program and then do the following (do **not** click `Install Now` just yet):
+
+- Check `Add Python <X.Y> to PATH` and click `Customize installation`
+        <img src=".//media/Python_01.png" />
+- Confirm `pip (download and install other Python packages)` is checked and click `Next` to start the installation process
+        <img src=".//media/Python_02.png" />
+
+## Provisioning Procedure
 
 1. Connect the SAM-IoT WG Development Board to the Host PC (running Windows) using a standard micro-USB cable
 
@@ -64,13 +77,15 @@ The following shows mock certificates that the provisioning tool can generate fo
 
     > CALL sam-iot-provision.bat `[arg1] [arg2] [arg3] [arg4]`
 
-    - Set the **first** argument for your desired Cloud service (e.g. aws or azure)
+    - Set the **first** argument for your desired Cloud service (aws, azure, gcp)
 
         > CALL sam-iot-provision.bat `azure` 19.7.3 3 D
 
     - Set the **second** argument which sets the target WINC firmware version to be programmed (view the contents of the [SAM_IoT_WINC_Upgrader](./SAM_IoT_WINC_Upgrader/) folder for the various versions of firmware available for upgrade)
 
         > CALL sam-iot-provision.bat azure `19.7.3` 3 D
+    
+            NOTE: To bypass updating the WINC firmware, set this argument to 0
 
     - Set the **third** argument to match your Curiosity Virtual COM port `number`
 

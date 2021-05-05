@@ -10,6 +10,9 @@ SET drive=%4
 SET DIR_UPGRADER=SAM_IoT_WINC_Upgrader
 SET DIR_CERTGEN=SAM_IoT_Certs_Generator\CertGen
 SET DIR_CREDENTIALS=ChainOfTrust
+SET DIR_DEMOAPPS=CloudDemoApps
+SET FILE_SERIALBRIDGE_HEX=sam_iot_serial_bridge.hex
+SET FILE_CERTGEN_HEX=SAM_IoT_CertGen.hex
 
 REM <Display the current date and time>
 ECHO.
@@ -18,10 +21,15 @@ REM <Convert start and end times to hundredths of a second>
 Call :s_calc_timecode %TIME%
 Set _start_timecode=%errorlevel%
 
+REM <If desired WINC firmware version is set to 0 then skip the WINC programming process>
+IF %wincver% EQU 0 (GOTO :WINC_Provision_Start)
+
+:WINC_Update_Start
+
 ECHO.
 ECHO *** Programming Serial Bridge Firmware into MCU ***
 ECHO.
-copy .\%DIR_UPGRADER%\sam_iot_serial_bridge.hex %drive%:\
+copy .\%DIR_UPGRADER%\%FILE_SERIALBRIDGE_HEX% %drive%:\
 
 ECHO.
 ECHO *** Launching WINC Programming Utilities ***
@@ -30,15 +38,19 @@ ECHO *** (Now might be a good time for a coffee break) ***
 ECHO.
 cd .\%DIR_UPGRADER%\%wincver%
 IF %wincver% LSS 19.7.3 (CALL download_all.bat UART SAMD21 3A0 0 %comport%) ELSE (CALL download_all.bat UART 1500 0 %comport%)
+cd ..\..
+
+:WINC_Provision_Start
 
 ECHO.
 ECHO *** Programming Provisioning Firmware into MCU ***
 ECHO.
-cd ..\..\%DIR_CERTGEN%
-copy SAM_IoT_CertGen.hex %drive%:\
+cd %DIR_CERTGEN%
+copy %FILE_CERTGEN_HEX% %drive%:\
 
 ECHO.
-ECHO *** Updating Python Modules (if needed) ***
+ECHO *** Updating Python Modules ***
+ECHO *** (if needed - requirements may already be satisfied) ***
 ECHO.
 python -m pip install --upgrade pip
 pip install -r py_modules.txt
@@ -97,14 +109,16 @@ copy /Y device.crt ..\..\%DIR_CREDENTIALS%
 copy /Y device.crt ..\..\%DIR_CREDENTIALS%\device.pem
 
 ECHO.
-ECHO ***  Programming Cloud Service Demo Application into MCU  ***
-ECHO *** (Please be patient; this could take up to a minute or more) ***
+ECHO *** Programming the MCU: Cloud Service Demo Application for %cloud% ***
+ECHO *** (Please be patient; this could take up to a minute or more...) ***
 ECHO.
-cd ..\..\..
-IF %cloud%==azure (copy AzureIotPnpDps.X.production.hex %drive%:\)
+erase %drive%:\*.hex
+cd ..\..\..\%DIR_DEMOAPPS%
+copy sam_iot_demoapp_%cloud%.hex %drive%:\
+cd ..
 
 ECHO.
-ECHO *** Provisioning SAM-IoT Development Board COMPLETED ***
+ECHO *** Provisioning SAM-IoT Development Board for %cloud% COMPLETED ***
 ECHO.
 
 REM <Display the current date and time>
