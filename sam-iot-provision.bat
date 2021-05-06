@@ -114,7 +114,7 @@ ECHO *** (Please be patient; this could take up to a minute or more...) ***
 ECHO.
 erase %drive%:\*.hex
 cd ..\..\..\%DIR_DEMOAPPS%
-copy sam_iot_demoapp_%cloud%.hex %drive%:\
+copy samiot_demoapp_%cloud%.hex %drive%:\
 cd ..
 
 ECHO.
