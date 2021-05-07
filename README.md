@@ -89,11 +89,11 @@ As a prerequisite to using this provisioning tools package, Python is required t
 
     - Set the **third** argument to match the Curiosity Virtual COM port `number`
 
-        > CALL sam-iot-provision.bat azure 19.7.3 `4` [letter]
+        > CALL sam-iot-provision.bat azure 19.7.3 `3` [letter]
 
     - Set the **fourth** argument for the `letter` corresponding to the CURIOSITY drive
 
-        > CALL sam-iot-provision.bat azure 19.7.3 4 `D`
+        > CALL sam-iot-provision.bat azure 19.7.3 3 `F`
 
 6. Save the changes to the batch file and exit the text editor
 
