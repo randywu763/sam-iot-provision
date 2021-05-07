@@ -71,29 +71,29 @@ As a prerequisite to using this provisioning tools package, Python is required t
 
     <img src=".//media/image_02.png" />
 
-4. Edit the `iotprovision.bat` file using any text editor of your choice
+4. Using any text editor of choice, open the `iotprovision.bat` file
 
-5. Locate the following line in the batch file and note that 4 command line arguments need to be set 
+5. Locate the following line in the batch file and note that all 4 command line arguments need to be set 
 
-    > CALL sam-iot-provision.bat `[arg1] [arg2] [arg3] [arg4]`
+    > CALL sam-iot-provision.bat `[cloud] [winc_ver] [number] [letter]`
 
-    - Set the **first** argument for your desired Cloud service (aws, azure, gcp)
+    - Set the **first** argument for the desired Cloud service (aws, azure, gcp)
 
-        > CALL sam-iot-provision.bat `azure` 19.7.3 3 D
+        > CALL sam-iot-provision.bat `azure` [winc_ver] [number] [letter]
 
     - Set the **second** argument which sets the target WINC firmware version to be programmed (view the contents of the [SAM_IoT_WINC_Upgrader](./SAM_IoT_WINC_Upgrader/) folder for the various versions of firmware available for upgrade)
 
-        > CALL sam-iot-provision.bat azure `19.7.3` 3 D
+        > CALL sam-iot-provision.bat azure `19.7.3` [number] [letter]
     
             NOTE: To bypass updating the WINC firmware, set this argument to 0
 
-    - Set the **third** argument to match your Curiosity Virtual COM port `number`
+    - Set the **third** argument to match the Curiosity Virtual COM port `number`
 
-        > CALL sam-iot-provision.bat azure 19.7.3 `3` D
+        > CALL sam-iot-provision.bat azure 19.7.3 `4` [letter]
 
-    - Set the **fourth** argument for the drive `letter` corresponding to CURIOSITY
+    - Set the **fourth** argument for the `letter` corresponding to the CURIOSITY drive
 
-        > CALL sam-iot-provision.bat azure 19.7.3 3 `D`
+        > CALL sam-iot-provision.bat azure 19.7.3 4 `D`
 
 6. Save the changes to the batch file and exit the text editor
 
