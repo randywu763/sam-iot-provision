@@ -32,17 +32,17 @@ In summary, at the time the provisioning script is launched:
 
 ## Examples of Mock Certificates
 
-The following shows mock certificates that the provisioning tool can generate (using a mock chain of trust is only recommended for evaluation purposes):
+The following shows a set of mock certificates that the provisioning tool can generate (using a mock chain of trust is only recommended for evaluation purposes):
 
-1. **Root** Certificate issued by Root CA to Root CA
+1. **Root** Certificate issued by "Root CA" to "Root CA"
 
     <img src=".//media/CertInfo_Root.png" />
 
-2. **Signer** Certificate issued by Root CA to Microchip Technology Inc
+2. **Signer** Certificate issued by "Root CA" to "Microchip Technology Inc"
 
     <img src=".//media/CertInfo_Signer.png" />
 
-3. **Device** Certificate issued by Microchip Technology Inc to sn01239E946F011C66FE
+3. **Device** Certificate issued by "Microchip Technology Inc" to "sn01239E946F011C66FE"
 
     <img src=".//media/CertInfo_Device.png" />
 
