@@ -14,8 +14,8 @@ def ca_create_signer_csr(signer_ca_key_path=SIGNER_CA_KEY_FILENAME, signer_ca_cs
     # (g_cert_elements_1_signer). If this name is changed, it will also need to be changed in the firmware.
     # The cert2certdef.py utility script can help with regenerating the cert_def_1_signer.c file after making changes.
     builder = builder.subject_name(x509.Name([
-        x509.NameAttribute(x509.oid.NameOID.ORGANIZATION_NAME, u'Microsoft Inc'),
-        x509.NameAttribute(x509.oid.NameOID.COMMON_NAME, u'Microsoft Signer')]))
+        x509.NameAttribute(x509.oid.NameOID.ORGANIZATION_NAME, u'Microchip Technology Inc'),
+        x509.NameAttribute(x509.oid.NameOID.COMMON_NAME, u'Microchip Technology Inc')]))
     builder = add_signer_extensions(
         builder=builder,
         public_key=signer_ca_priv_key.public_key())

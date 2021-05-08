@@ -12,7 +12,7 @@ SET DIR_CERTGEN=SAM_IoT_Certs_Generator\CertGen
 SET DIR_CREDENTIALS=ChainOfTrust
 SET DIR_DEMOAPPS=CloudDemoApps
 SET FILE_SERIALBRIDGE_HEX=sam_iot_serial_bridge.hex
-SET FILE_CERTGEN_HEX=SAM_IoT_CertGen.hex
+SET FILE_CERTGEN_HEX=sam_iot_provision.hex
 
 REM <Display the current date and time>
 ECHO.

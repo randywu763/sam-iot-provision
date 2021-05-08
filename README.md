@@ -32,19 +32,19 @@ In summary, at the time the provisioning script is launched:
 
 ## Examples of Mock Certificates
 
-The following shows mock certificates that the provisioning tool can generate (recommended for evaluation purposes only):
+The following shows mock certificates that the provisioning tool can generate (using a mock chain of trust is only recommended for evaluation purposes):
 
-1. **Root** Certificate issued by Root CA from Microchip Technology Inc
+1. **Root** Certificate issued by Root CA to Root CA
 
-    <img src=".//media/Root_Cert_Info.png" />
+    <img src=".//media/CertInfo_Root.png" />
 
-2. **Signer** Certificate issued by Root CA from Microchip Technology Inc
+2. **Signer** Certificate issued by Root CA to Microchip Technology Inc
 
-    <img src=".//media/Signer_Cert_Info.png" />
+    <img src=".//media/CertInfo_Signer.png" />
 
-3. **Device** Certificate issued by Microsoft Signer from Microsoft Inc
+3. **Device** Certificate issued by Microchip Technology Inc to sn01239E946F011C66FE
 
-    <img src=".//media/Device_Cert_Info.png" />
+    <img src=".//media/CertInfo_Device.png" />
 
 ## Software Prerequisites
 
@@ -75,23 +75,23 @@ As a prerequisite to using this provisioning tools package, Python is required t
 
 5. Locate the following line in the batch file and note that all 4 command line arguments need to be set 
 
-    > CALL sam-iot-provision.bat `[cloud] [winc_ver] [number] [letter]`
+    > CALL sam-iot-provision.bat `[cloud_service] [winc_ver] [com_port] [drive_letter]`
 
-    - Set the **first** argument for the desired Cloud service (aws, azure, gcp)
+    - Set the **first** argument for the desired Cloud service (aws, azure, gcp); for example
 
-        > CALL sam-iot-provision.bat `azure` [winc_ver] [number] [letter]
+        > CALL sam-iot-provision.bat `azure` [winc_ver] [com_port] [drive_letter]
 
-    - Set the **second** argument which sets the target WINC firmware version to be programmed (view the contents of the [SAM_IoT_WINC_Upgrader](./SAM_IoT_WINC_Upgrader/) folder for the various versions of firmware available for upgrade)
+    - Set the **second** argument which sets the target WINC firmware version to be programmed (view the contents of the [SAM_IoT_WINC_Upgrader](./SAM_IoT_WINC_Upgrader/) folder for the various versions of firmware available for upgrade); for example
 
-        > CALL sam-iot-provision.bat azure `19.7.3` [number] [letter]
+        > CALL sam-iot-provision.bat azure `19.7.3` [com_port] [drive_letter]
     
             NOTE: To bypass updating the WINC firmware, set this argument to 0
 
-    - Set the **third** argument to match the Curiosity Virtual COM port `number`
+    - Set the **third** argument to match the Curiosity Virtual COM port `number`; for example
 
-        > CALL sam-iot-provision.bat azure 19.7.3 `3` [letter]
+        > CALL sam-iot-provision.bat azure 19.7.3 `3` [drive_letter]
 
-    - Set the **fourth** argument for the `letter` corresponding to the CURIOSITY drive
+    - Set the **fourth** argument for the `letter` corresponding to the CURIOSITY drive; for example
 
         > CALL sam-iot-provision.bat azure 19.7.3 3 `F`
 
