@@ -81,7 +81,7 @@ As a prerequisite to using this provisioning tools package, Python is required t
 
         > CALL sam-iot-provision.bat `azure` [winc_ver] [com_port] [drive_letter]
 
-    - Set the **second** argument which sets the target WINC firmware version to be programmed (view the contents of the [SAM_IoT_WINC_Upgrader](./SAM_IoT_WINC_Upgrader/) folder for the various versions of firmware available for upgrade); for example
+    - Set the **second** argument which determines the target WINC firmware version to be programmed (view the contents of the [SAM_IoT_WINC_Upgrader](./SAM_IoT_WINC_Upgrader/) folder for the various versions of firmware available for upgrade); for example
 
         > CALL sam-iot-provision.bat azure `19.7.3` [com_port] [drive_letter]
     
