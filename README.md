@@ -99,6 +99,8 @@ As a prerequisite to using this provisioning tools package, Python is required t
 6. Save the changes to the batch file and exit the text editor
 
 7. Open a command line window (e.g. Command Prompt, PowerShell) and execute `.\iotprovision.bat`
+    
+    NOTE: The WINC firmware update process can take anywhere from 15 to 30 minutes, so now may be a good time to take a coffee break or work on something else :)
 
 8. When the provisioning script has completed execution, the files for the security certificates (`*.crt`/`*.pem`), keys (`*.key`), and signing requests (`*.csr`) can all be accessed from the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder
 
