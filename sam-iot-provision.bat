@@ -22,7 +22,7 @@ Call :s_calc_timecode %TIME%
 Set _start_timecode=%errorlevel%
 
 REM <If desired WINC firmware version is set to 0 then skip the WINC programming process>
-IF %wincver% EQU 0 (GOTO :WINC_Provision_Start)
+REM IF %wincver% EQU 0 (GOTO :WINC_Provision_Start)
 
 :WINC_Update_Start
 

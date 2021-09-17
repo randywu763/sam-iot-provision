@@ -55,9 +55,12 @@ As a prerequisite to using this provisioning tools package, Python is required t
 2. Launch the installation setup program and then do the following (do **not** click `Install Now` just yet):
 
 - Check `Add Python <X.Y> to PATH` and click `Customize installation`
-        <img src=".//media/Python_01.png" />
+
+    <img src=".//media/Python_01.png" />
+
 - Confirm `pip (download and install other Python packages)` is checked and click `Next` to start the installation process
-        <img src=".//media/Python_02.png" />
+
+    <img src=".//media/Python_02.png" />
 
 ## Provisioning Procedure
 
@@ -84,8 +87,6 @@ As a prerequisite to using this provisioning tools package, Python is required t
     - Set the **second** argument which determines the target WINC firmware version to be programmed (view the contents of the [SAM_IoT_WINC_Upgrader](./SAM_IoT_WINC_Upgrader/) folder for the various versions of firmware available for upgrade); for example
 
         > CALL sam-iot-provision.bat azure `19.7.3` [com_port] [drive_letter]
-    
-            NOTE: To bypass updating the WINC firmware, set this argument to 0
 
     - Set the **third** argument to match the Curiosity Virtual COM port `number`; for example
 
