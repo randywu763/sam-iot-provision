@@ -22,7 +22,7 @@ The following two tasks are required to properly configure & provision the WINC1
 
 By default, this provisioning tool is configured to create a mock chain of trust before generating the device certificate (the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder is initially empty so the tool will recognize this). To use specific root and/or signer credentials, those files need to be copied into the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder (the **exact** file names as shown below need to be used in order for the tool to recognize the purpose/contents of each file).
 
-<img src=".//media/image_00.png" />
+<img src=".//media/image_01.png" />
 
 In summary, at the time the provisioning script is launched:
 
@@ -64,19 +64,28 @@ As a prerequisite to using this provisioning tools package, Python is required t
 
 ## Provisioning Procedure
 
-1. Connect the SAM-IoT WG Development Board to the Host PC (running Windows) using a standard micro-USB cable
+1. Clone this tools package onto your local PC by issuing the following command in a `Command Prompt` or `PowerShell` window
 
-2. Open a **File Explorer** window and determine the drive `letter` that Windows assigned to `CURIOSITY` 
+    ```bash
+    git clone https://github.com/randywu763/sam-iot-provision
+    ```
+    Alternatively, you can download/extract a ZIP file by clicking on the `Code` button (located at the top of this GitHub page) and then selecting `Download ZIP`
 
-    <img src=".//media/image_01.png" />
+    <img src=".//media/image_00.png" />
 
-3. Determine the active COM port number for your `Curiosity Virtual COM port`.  You can find the COM port number by opening the Windows **Device Manager** &gt; expand `Ports(COM & LPT)` &gt; take note of the specific `(COM<X>)` associated with the Curiosity Virtual COM Port
+2. Connect the SAM-IoT WG Development Board to the Host PC (must be running Windows) using a standard micro-USB cable
+
+3. Open a **File Explorer** window and determine the drive `letter` that Windows assigned to `CURIOSITY` 
 
     <img src=".//media/image_02.png" />
 
-4. Using any text editor of choice, open the `iotprovision.bat` file
+4. Determine the active COM port number for your `Curiosity Virtual COM port`.  You can find the COM port number by opening the Windows **Device Manager** &gt; expand `Ports(COM & LPT)` &gt; take note of the specific `(COM<X>)` associated with the Curiosity Virtual COM Port
 
-5. Locate the following line in the batch file and note that all 4 command line arguments need to be set 
+    <img src=".//media/image_03.png" />
+
+5. Using any text editor of choice, open the `iotprovision.bat` file located in your local copy of this tools package
+
+6. Locate the following line in the batch file and note that all 4 command line arguments need to be set 
 
     > CALL sam-iot-provision.bat `[cloud_service] [winc_ver] [com_port] [drive_letter]`
 
@@ -96,12 +105,12 @@ As a prerequisite to using this provisioning tools package, Python is required t
 
         > CALL sam-iot-provision.bat azure 19.7.3 3 `F`
 
-6. Save the changes to the batch file and exit the text editor
+7. Save the changes to the batch file and exit the text editor
 
-7. Open a command line window (e.g. Command Prompt, PowerShell) and execute `.\iotprovision.bat`
+8. Open a command line window (e.g. Command Prompt, PowerShell) and execute `.\iotprovision.bat`
     
-    NOTE: The WINC firmware update process can take anywhere from 15 to 30 minutes, so now may be a good time to take a coffee break or work on something else :)
+    NOTE: The WINC firmware update process can take anywhere from 15 to 30 minutes, so now may be a good time to take a coffee break or work on something else <img src=".//media/emoji.png" style="width:0.2.in;height:0.2in" alt="A screenshot of a cell phone Description automatically generated" />
 
-8. When the provisioning script has completed execution, the files for the security certificates (`*.crt`/`*.pem`), keys (`*.key`), and signing requests (`*.csr`) can all be accessed from the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder
+9. When the provisioning script has completed execution, the files for the security certificates (`*.crt`/`*.pem`), keys (`*.key`), and signing requests (`*.csr`) can all be accessed from the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder
 
-    <img src=".//media/image_03.png" />
+    <img src=".//media/image_04.png" /> 
