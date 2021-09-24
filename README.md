@@ -64,12 +64,12 @@ As a prerequisite to using this provisioning tools package, Python is required t
 
 ## Provisioning Procedure
 
-1. Clone this tools package onto your local PC by issuing the following command in a `Command Prompt` or `PowerShell` window
+1. If you have [Git](https://git-scm.com) installed, clone this tools package onto your local PC by issuing the following command in a `Command Prompt` or `PowerShell` window
 
     ```bash
     git clone https://github.com/randywu763/sam-iot-provision
     ```
-    Alternatively, you can download/extract a ZIP file by clicking on the `Code` button (located at the top of this GitHub page) and then selecting `Download ZIP`
+    Alternatively, you can simply download/extract a ZIP archive file by clicking on the `Code` button (located at the top of this GitHub page) and then selecting `Download ZIP`
 
     <img src=".//media/image_00.png" />
 
