@@ -1,0 +1,551 @@
+Provisioning Script STARTED at 15:48:53.22 (Tue 01/04/2022)
+
+*** Programming Serial Bridge Firmware into MCU ***
+
+TIMESTAMP:15:48:53.25
+        1 file(s) copied.
+
+*** Launching WINC Programming Utilities ***
+
+*** (Now might be a good time for a coffee break) ***
+
+TIMESTAMP:15:48:57.40
+Mode UART
+Chip 1500
+Launch update_pll_table.bat UART 1500 8
+TIMESTAMP:15:48:57.42
+Mode UART
+Chip 1500
+Checking for Python support:
+C:\Python310\python.exe
+C:\Users\M43527\AppData\Local\Programs\Python\Python38\python.exe
+C:\Users\M43527\AppData\Local\Microsoft\WindowsApps\python.exe
+OK
+
+Updating PLL table in image for 3A0 variant
+firmware\winc_programmer_uart.exe  -p \\.\COM8 -d winc1500  -r efuse -pfw programmer_firmware\release3A0\programmer_release_text.bin
+  File "C:\Users\M43527\Desktop\todelete\sam-iot-provision-main_wip\SAM_IoT_WINC_Upgrader\19.7.3\extract_xo_offset.py", line 29
+    print "BANK {}: ".format(b),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?
+XO Offset is
+firmware\image_tool.exe -c firmware\flash_image.config -c Tools\gain_builder\gain_sheets\new_gain.config -o firmware\m2m_image_3A0.bin -of prog  -cs "[pll table]\r\nfrequency offset is "
+Device Image Creation Tool 1.0.2 [r708] (Jul 28 2020)
+Copyright (C) Microchip Technology Inc. 2020
+
+processing region '[boot firmware]'
+WINCFirmwareImageBuild: opening firmware file 'boot_firmware/release3A0/boot_firmware.bin'
+written 1304 of 4096 bytes to image (32%)
+processing region '[control sector]'
+WINC1500ControlSectorBuild: creating control sector
+written 64 of 8192 bytes to image (1%)
+processing region '[pll table]'
+Creating WiFi channel lookup table for PLL with xo_offset = 0.0000.
+written 456 of 1024 bytes to image (45%)
+processing region '[gain table]'
+WINC1500GainBuildV2: creating gain tables
+written 1600 of 3072 bytes to image (53%)
+processing region '[root certificates]'
+found certificate: Baltimore CyberTrust Root
+found certificate: DigiCert High Assurance EV Root CA
+found certificate: DigiCert SHA2 High Assurance Server CA
+found certificate: Entrust Root Certification Authority
+found certificate: GeoTrust Global CA
+found certificate: GlobalSign Root CA
+found certificate: AddTrust External CA Root
+found certificate:
+found certificate: QuoVadis Root CA 2
+found certificate: VeriSign Class 3 Public Primary Certification Authority - G5
+found certificate: Amazon Root CA 1
+written 3492 of 4096 bytes to image (86%)
+processing region '[tls certificates]'
+written 0 of 8192 bytes to image (0%)
+processing region '[http files]'
+HTTPFileSystemAddFile: opening HTTP file 'provisioning_webpage/default.html'
+HTTPFileSystemAddFile: opening HTTP file 'provisioning_webpage/style.css'
+HTTPFileSystemAddFile: opening HTTP file 'provisioning_webpage/favicon.ico'
+HTTPFileSystemAddFile: opening HTTP file 'provisioning_webpage/logo.png'
+HTTPFileSystemAddFile: opening HTTP file 'provisioning_webpage/error.json'
+HTTPFileSystemAddFile: opening HTTP file 'provisioning_webpage/scanresults.json'
+HTTPFileSystemAddFile: opening HTTP file 'provisioning_webpage/ok.json'
+written 7760 of 8192 bytes to image (95%)
+processing region '[connection parameters]'
+written 0 of 4096 bytes to image (0%)
+processing region '[downloader firmware]'
+WINCFirmwareImageBuild: opening firmware file 'downloader_firmware/release3A0/downloader_firmware.bin'
+written 4628 of 241664 bytes to image (2%)
+processing region '[wifi firmware]'
+WINCFirmwareImageBuild: opening firmware file 'firmware/wifi_v111/ASIC_3A0/wifi_firmware.bin'
+written 235286 of 237036 bytes to image (100%)
+processing region '[ate firmware]'
+WINCFirmwareImageBuild: opening firmware file 'ate_firmware/burst_tx_firmware_winc1500.bin'
+written 76736 of 765952 bytes to image (11%)
+Successful
+Downloading Image...
+Start Call winc_programmer_uart.exe  -p \\.\COM8 -d winc1500 -i m2m_image_3A0.bin -if prog -e -v -w -pfw ..\programmer_firmware\release3A0\programmer_release_text.bin
+TIMESTAMP:15:49:00.55
+WINC Programming Tool 1.0.3 [r708] (Jul 28 2020)
+Copyright (C) Microchip Technology Inc. 2020
+
+software WINC serial bridge found, baud rate changes supported
+chip ID is 0x001503a0
+programming firmware file: ..\programmer_firmware\release3A0\programmer_release_text.bin
+starting device
+reinitialise serial bridge to 500000
+waiting for firmware to run
+flash ID 0x001440ef
+flash size is 8 Mb
+opening input file 'm2m_image_3A0.bin' (format 4)
+prog: requested flash size is 1048576 bytes
+prog: region header - start address is 0x000000 with data length 1304 bytes, 1304 bytes to be erased
+prog: sector data at address 0x000000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 1304 bytes, got 1304 bytes
+prog: region header - start address is 0x001000 with data length 64 bytes, 64 bytes to be erased
+prog: sector data at address 0x001000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 64 bytes, got 64 bytes
+prog: region header - start address is 0x003000 with data length 456 bytes, 456 bytes to be erased
+prog: sector data at address 0x003000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 456 bytes, got 456 bytes
+prog: region header - start address is 0x003400 with data length 1600 bytes, 1600 bytes to be erased
+prog: read data block into sector offset 0x400, requested 1600 bytes, got 1600 bytes
+prog: region header - start address is 0x004000 with data length 3492 bytes, 3492 bytes to be erased
+prog: sector data at address 0x004000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 3492 bytes, got 3492 bytes
+prog: region header - start address is 0x005000 with data length 0 bytes, 0 bytes to be erased
+prog: region header - start address is 0x007000 with data length 7760 bytes, 7760 bytes to be erased
+prog: sector data at address 0x007000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x008000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 3664 bytes, got 3664 bytes
+prog: region header - start address is 0x009000 with data length 0 bytes, 0 bytes to be erased
+prog: region header - start address is 0x00a000 with data length 4628 bytes, 4628 bytes to be erased
+prog: sector data at address 0x00a000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x00b000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 532 bytes, got 532 bytes
+prog: region header - start address is 0x00b214 with data length 235286 bytes, 235286 bytes to be erased
+prog: read data block into sector offset 0x214, requested 3564 bytes, got 3564 bytes
+prog: sector data at address 0x00c000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x00d000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x00e000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x00f000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x010000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x011000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x012000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x013000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x014000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x015000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x016000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x017000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x018000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x019000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x01a000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x01b000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x01c000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x01d000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x01e000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x01f000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x020000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x021000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x022000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x023000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x024000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x025000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x026000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x027000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x028000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x029000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x02a000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x02b000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x02c000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x02d000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x02e000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x02f000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x030000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x031000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x032000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x033000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x034000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x035000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x036000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x037000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x038000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x039000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x03a000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x03b000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x03c000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x03d000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x03e000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x03f000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x040000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x041000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x042000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x043000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x044000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 2346 bytes, got 2346 bytes
+prog: region header - start address is 0x045000 with data length 76736 bytes, 76736 bytes to be erased
+prog: sector data at address 0x045000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x046000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x047000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x048000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x049000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x04a000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x04b000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x04c000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x04d000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x04e000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x04f000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x050000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x051000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x052000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x053000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x054000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x055000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x056000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x057000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 3008 bytes, got 3008 bytes
+closing input file 'm2m_image_3A0.bin'
+
+begin erase operation
+
+ 0x000000:[eeeeeeee] 0x008000:[eeeeeeee] 0x010000:[eeeeeeee] 0x018000:[eeeeeeee]
+ 0x020000:[eeeeeeee] 0x028000:[eeeeeeee] 0x030000:[eeeeeeee] 0x038000:[eeeeeeee]
+ 0x040000:[eeeeeeee] 0x048000:[eeeeeeee] 0x050000:[eeeeeeee] 0x058000:[eeeeeeee]
+ 0x060000:[eeeeeeee] 0x068000:[eeeeeeee] 0x070000:[eeeeeeee] 0x078000:[eeeeeeee]
+ 0x080000:[eeeeeeee] 0x088000:[eeeeeeee] 0x090000:[eeeeeeee] 0x098000:[eeeeeeee]
+ 0x0a0000:[eeeeeeee] 0x0a8000:[eeeeeeee] 0x0b0000:[eeeeeeee] 0x0b8000:[eeeeeeee]
+ 0x0c0000:[eeeeeeee] 0x0c8000:[eeeeeeee] 0x0d0000:[eeeeeeee] 0x0d8000:[eeeeeeee]
+ 0x0e0000:[eeeeeeee] 0x0e8000:[eeeeeeee] 0x0f0000:[eeeeeeee] 0x0f8000:[eeeeeeee]
+
+begin write operation
+
+ 0x000000:[ww.ww..w] 0x008000:[w.wwwwww] 0x010000:[wwwwwwww] 0x018000:[wwwwwwww]
+ 0x020000:[wwwwwwww] 0x028000:[wwwwwwww] 0x030000:[wwwwwwww] 0x038000:[wwwwwwww]
+ 0x040000:[wwwwwwww] 0x048000:[wwwwwwww] 0x050000:[wwwwwwww] 0x058000:[........]
+ 0x060000:[........] 0x068000:[........] 0x070000:[........] 0x078000:[........]
+ 0x080000:[........] 0x088000:[........] 0x090000:[........] 0x098000:[........]
+ 0x0a0000:[........] 0x0a8000:[........] 0x0b0000:[........] 0x0b8000:[........]
+ 0x0c0000:[........] 0x0c8000:[........] 0x0d0000:[........] 0x0d8000:[........]
+ 0x0e0000:[........] 0x0e8000:[........] 0x0f0000:[........] 0x0f8000:[........]
+
+TIMESTAMP:15:55:01.59 : previuous call ended
+Start Call winc_programmer_uart.exe  -p \\.\COM8 -d winc1500 -i m2m_image_3A0.bin -if prog -e  -v -w -r -pfw ..\programmer_firmware\release3A0\programmer_release_text.bin
+TIMESTAMP:15:55:01.59
+WINC Programming Tool 1.0.3 [r708] (Jul 28 2020)
+Copyright (C) Microchip Technology Inc. 2020
+
+software WINC serial bridge found, baud rate changes supported
+chip ID is 0x001503a0
+programming firmware file: ..\programmer_firmware\release3A0\programmer_release_text.bin
+starting device
+reinitialise serial bridge to 500000
+waiting for firmware to run
+flash ID 0x001440ef
+flash size is 8 Mb
+opening input file 'm2m_image_3A0.bin' (format 4)
+prog: requested flash size is 1048576 bytes
+prog: region header - start address is 0x000000 with data length 1304 bytes, 1304 bytes to be erased
+prog: sector data at address 0x000000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 1304 bytes, got 1304 bytes
+prog: region header - start address is 0x001000 with data length 64 bytes, 64 bytes to be erased
+prog: sector data at address 0x001000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 64 bytes, got 64 bytes
+prog: region header - start address is 0x003000 with data length 456 bytes, 456 bytes to be erased
+prog: sector data at address 0x003000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 456 bytes, got 456 bytes
+prog: region header - start address is 0x003400 with data length 1600 bytes, 1600 bytes to be erased
+prog: read data block into sector offset 0x400, requested 1600 bytes, got 1600 bytes
+prog: region header - start address is 0x004000 with data length 3492 bytes, 3492 bytes to be erased
+prog: sector data at address 0x004000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 3492 bytes, got 3492 bytes
+prog: region header - start address is 0x005000 with data length 0 bytes, 0 bytes to be erased
+prog: region header - start address is 0x007000 with data length 7760 bytes, 7760 bytes to be erased
+prog: sector data at address 0x007000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x008000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 3664 bytes, got 3664 bytes
+prog: region header - start address is 0x009000 with data length 0 bytes, 0 bytes to be erased
+prog: region header - start address is 0x00a000 with data length 4628 bytes, 4628 bytes to be erased
+prog: sector data at address 0x00a000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x00b000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 532 bytes, got 532 bytes
+prog: region header - start address is 0x00b214 with data length 235286 bytes, 235286 bytes to be erased
+prog: read data block into sector offset 0x214, requested 3564 bytes, got 3564 bytes
+prog: sector data at address 0x00c000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x00d000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x00e000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x00f000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x010000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x011000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x012000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x013000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x014000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x015000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x016000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x017000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x018000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x019000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x01a000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x01b000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x01c000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x01d000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x01e000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x01f000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x020000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x021000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x022000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x023000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x024000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x025000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x026000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x027000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x028000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x029000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x02a000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x02b000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x02c000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x02d000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x02e000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x02f000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x030000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x031000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x032000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x033000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x034000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x035000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x036000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x037000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x038000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x039000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x03a000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x03b000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x03c000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x03d000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x03e000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x03f000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x040000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x041000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x042000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x043000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x044000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 2346 bytes, got 2346 bytes
+prog: region header - start address is 0x045000 with data length 76736 bytes, 76736 bytes to be erased
+prog: sector data at address 0x045000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x046000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x047000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x048000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x049000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x04a000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x04b000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x04c000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x04d000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x04e000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x04f000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x050000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x051000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x052000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x053000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x054000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x055000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x056000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 4096 bytes, got 4096 bytes
+prog: sector data at address 0x057000, offset 0 bytes
+prog: read data block into sector offset 0x000, requested 3008 bytes, got 3008 bytes
+closing input file 'm2m_image_3A0.bin'
+
+begin erase operation
+
+ 0x000000:[eeeeeeee] 0x008000:[eeeeeeee] 0x010000:[eeeeeeee] 0x018000:[eeeeeeee]
+ 0x020000:[eeeeeeee] 0x028000:[eeeeeeee] 0x030000:[eeeeeeee] 0x038000:[eeeeeeee]
+ 0x040000:[eeeeeeee] 0x048000:[eeeeeeee] 0x050000:[eeeeeeee] 0x058000:[eeeeeeee]
+ 0x060000:[eeeeeeee] 0x068000:[eeeeeeee] 0x070000:[eeeeeeee] 0x078000:[eeeeeeee]
+ 0x080000:[eeeeeeee] 0x088000:[eeeeeeee] 0x090000:[eeeeeeee] 0x098000:[eeeeeeee]
+ 0x0a0000:[eeeeeeee] 0x0a8000:[eeeeeeee] 0x0b0000:[eeeeeeee] 0x0b8000:[eeeeeeee]
+ 0x0c0000:[eeeeeeee] 0x0c8000:[eeeeeeee] 0x0d0000:[eeeeeeee] 0x0d8000:[eeeeeeee]
+ 0x0e0000:[eeeeeeee] 0x0e8000:[eeeeeeee] 0x0f0000:[eeeeeeee] 0x0f8000:[eeeeeeee]
+
+begin write operation
+
+ 0x000000:[ww.ww..w] 0x008000:[w.wwwwww] 0x010000:[wwwwwwww] 0x018000:[wwwwwwww]
+ 0x020000:[wwwwwwww] 0x028000:[wwwwwwww] 0x030000:[wwwwwwww] 0x038000:[wwwwwwww]
+ 0x040000:[wwwwwwww] 0x048000:[wwwwwwww] 0x050000:[wwwwwwww] 0x058000:[........]
+ 0x060000:[........] 0x068000:[........] 0x070000:[........] 0x078000:[........]
+ 0x080000:[........] 0x088000:[........] 0x090000:[........] 0x098000:[........]
+ 0x0a0000:[........] 0x0a8000:[........] 0x0b0000:[........] 0x0b8000:[........]
+ 0x0c0000:[........] 0x0c8000:[........] 0x0d0000:[........] 0x0d8000:[........]
+ 0x0e0000:[........] 0x0e8000:[........] 0x0f0000:[........] 0x0f8000:[........]
+
+begin read operation
+
+ 0x000000:[rrrrrrrr] 0x008000:[rrrrrrrr] 0x010000:[rrrrrrrr] 0x018000:[rrrrrrrr]
+ 0x020000:[rrrrrrrr] 0x028000:[rrrrrrrr] 0x030000:[rrrrrrrr] 0x038000:[rrrrrrrr]
+ 0x040000:[rrrrrrrr] 0x048000:[rrrrrrrr] 0x050000:[rrrrrrrr] 0x058000:[rrrrrrrr]
+ 0x060000:[rrrrrrrr] 0x068000:[rrrrrrrr] 0x070000:[rrrrrrrr] 0x078000:[rrrrrrrr]
+ 0x080000:[rrrrrrrr] 0x088000:[rrrrrrrr] 0x090000:[rrrrrrrr] 0x098000:[rrrrrrrr]
+ 0x0a0000:[rrrrrrrr] 0x0a8000:[rrrrrrrr] 0x0b0000:[rrrrrrrr] 0x0b8000:[rrrrrrrr]
+ 0x0c0000:[rrrrrrrr] 0x0c8000:[rrrrrrrr] 0x0d0000:[rrrrrrrr] 0x0d8000:[rrrrrrrr]
+ 0x0e0000:[rrrrrrrr] 0x0e8000:[rrrrrrrr] 0x0f0000:[rrrrrrrr] 0x0f8000:[rrrrrrrr]
+
+verify range 0x000000 to 0x100000
+begin verify operation
+
+ 0x000000:[pp.pp..v] 0x008000:[p.vvvvvv] 0x010000:[vvvvvvvv] 0x018000:[vvvvvvvv]
+ 0x020000:[vvvvvvvv] 0x028000:[vvvvvvvv] 0x030000:[vvvvvvvv] 0x038000:[vvvvvvvv]
+ 0x040000:[vvvvpvvv] 0x048000:[vvvvvvvv] 0x050000:[vvvvvvvp] 0x058000:[........]
+ 0x060000:[........] 0x068000:[........] 0x070000:[........] 0x078000:[........]
+ 0x080000:[........] 0x088000:[........] 0x090000:[........] 0x098000:[........]
+ 0x0a0000:[........] 0x0a8000:[........] 0x0b0000:[........] 0x0b8000:[........]
+ 0x0c0000:[........] 0x0c8000:[........] 0x0d0000:[........] 0x0d8000:[........]
+ 0x0e0000:[........] 0x0e8000:[........] 0x0f0000:[........] 0x0f8000:[........]
+
+verify passed
+TIMESTAMP:16:10:00.36 : previuous call ended
+*************** Download worked *****************
