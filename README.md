@@ -87,19 +87,19 @@ As a prerequisite to using this provisioning tools package, Python is required t
 
 6. Locate the following line in the batch file and note that all 4 command line arguments need to be set 
 
-    > CALL sam-iot-provision.bat `[cloud_service] [winc_ver] [com_port] [drive_letter]`
+    > CALL sam-iot-provision.bat `<cloud_service> <winc_ver> <com_port> <drive_letter>`
 
     - Set the **first** argument for the desired Cloud service (aws, azure, gcp); for example
 
-        > CALL sam-iot-provision.bat `azure` [winc_ver] [com_port] [drive_letter]
+        > CALL sam-iot-provision.bat `azure` <winc_ver> <com_port> <drive_letter>
 
     - Set the **second** argument which determines the target WINC firmware version to be programmed (view the contents of the [SAM_IoT_WINC_Upgrader](./SAM_IoT_WINC_Upgrader/) folder for the various versions of firmware available for upgrade); for example
 
-        > CALL sam-iot-provision.bat azure `19.7.3` [com_port] [drive_letter]
+        > CALL sam-iot-provision.bat azure `19.7.3` <com_port> <drive_letter>
 
     - Set the **third** argument to match the Curiosity Virtual COM port `number`; for example
 
-        > CALL sam-iot-provision.bat azure 19.7.3 `3` [drive_letter]
+        > CALL sam-iot-provision.bat azure 19.7.3 `3` <drive_letter>
 
     - Set the **fourth** argument for the `letter` corresponding to the CURIOSITY drive; for example
 
