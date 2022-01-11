@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="crypto_lib" />
+		<Option platforms="Windows;" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option platforms="Windows;" />
+				<Option output="./../lib/crypto.lib" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Weffc++" />
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG__" />
+					<Add option="-D_LIB" />
+					<Add option="-D_CRT_SECURE_NO_WARNINGS" />
+					<Add directory="../../../common/root_cert" />
+					<Add directory="../../../common/host_fw/" />
+					<Add directory="../../../host_drv" />
+					<Add directory="../source" />
+					<Add directory="../source/crypto" />
+					<Add directory="../source/x509" />
+					<Add directory="../include" />
+				</Compiler>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="Debug Win32;" />
+		</VirtualTargets>
+		<Linker>
+			<Add option="-static -s" />
+		</Linker>
+		<Unit filename="../crypto_lib_api.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../include/crypto_lib_api.h" />
+		<Unit filename="../source/crypto/bigint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/crypto/crypto.h" />
+		<Unit filename="../source/crypto/hash.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/crypto/rsa.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/crypto_port.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/m2m_types.h" />
+		<Unit filename="../source/nmi_m2m.h" />
+		<Unit filename="../source/rsa_key.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/tls_buffer_manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/tls_buffer_manager.h" />
+		<Unit filename="../source/tls_port.h" />
+		<Unit filename="../source/x509/asn1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/x509/asn1.h" />
+		<Unit filename="../source/x509/x509_cert.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/x509/x509_cert.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

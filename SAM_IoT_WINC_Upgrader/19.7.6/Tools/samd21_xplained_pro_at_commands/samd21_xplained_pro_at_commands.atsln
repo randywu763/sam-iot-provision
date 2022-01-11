@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "samd21_xplained_pro_at_commands", "samd21_xplained_pro_at_commands.cproj", "{CCEE4C2D-203A-4EA1-9709-855DC814ED69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCEE4C2D-203A-4EA1-9709-855DC814ED69}.Debug|ARM.ActiveCfg = Debug|ARM
+		{CCEE4C2D-203A-4EA1-9709-855DC814ED69}.Debug|ARM.Build.0 = Debug|ARM
+		{CCEE4C2D-203A-4EA1-9709-855DC814ED69}.Release|ARM.ActiveCfg = Release|ARM
+		{CCEE4C2D-203A-4EA1-9709-855DC814ED69}.Release|ARM.Build.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

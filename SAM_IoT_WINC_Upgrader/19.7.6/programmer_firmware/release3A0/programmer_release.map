@@ -1,0 +1,489 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+__gnu_lto_v1        0x1               ./release3A0/src/main.o
+
+Discarded input sections
+
+ .text          0x00000000        0x0 ./release3A0/src/main.o
+ .data          0x00000000        0x0 ./release3A0/src/main.o
+ .bss           0x00000000        0x0 ./release3A0/src/main.o
+ .sbss          0x00000000        0x0 ./release3A0/src/main.o
+ .gnu.lto_.jmpfuncs.cd3af224
+                0x00000000       0x67 ./release3A0/src/main.o
+ .gnu.lto_.inline.cd3af224
+                0x00000000      0x148 ./release3A0/src/main.o
+ .gnu.lto_.pureconst.cd3af224
+                0x00000000       0x36 ./release3A0/src/main.o
+ .gnu.lto_spi_flash_load_to_cortus_mem.cd3af224
+                0x00000000      0x3b3 ./release3A0/src/main.o
+ .gnu.lto_spi_flash_write_enable.cd3af224
+                0x00000000      0x1d4 ./release3A0/src/main.o
+ .gnu.lto_spi_flash_write_disable.cd3af224
+                0x00000000      0x1cf ./release3A0/src/main.o
+ .gnu.lto_spi_flash_read_status_reg.cd3af224
+                0x00000000      0x263 ./release3A0/src/main.o
+ .gnu.lto_spi_flash_chip_erase.cd3af224
+                0x00000000      0x1d4 ./release3A0/src/main.o
+ .gnu.lto_spi_flash_sector_erase.cd3af224
+                0x00000000      0x345 ./release3A0/src/main.o
+ .gnu.lto_spi_flash_page_program.cd3af224
+                0x00000000      0x3ca ./release3A0/src/main.o
+ .gnu.lto_spi_flash_pp.cd3af224
+                0x00000000      0x1f9 ./release3A0/src/main.o
+ .gnu.lto_spi_flash_verify_checksum.cd3af224
+                0x00000000      0x34c ./release3A0/src/main.o
+ .gnu.lto_spi_flash_rdid.cd3af224
+                0x00000000      0x24f ./release3A0/src/main.o
+ .gnu.lto_spi_flash_get_size_inmbit.cd3af224
+                0x00000000      0x24a ./release3A0/src/main.o
+ .gnu.lto_spi_flash_get_size_inbyte.cd3af224
+                0x00000000      0x1b0 ./release3A0/src/main.o
+ .gnu.lto_spi_flash_erase.cd3af224
+                0x00000000      0x3e0 ./release3A0/src/main.o
+ .gnu.lto_spi_init.cd3af224
+                0x00000000      0x153 ./release3A0/src/main.o
+ .gnu.lto_spi_flash_write.cd3af224
+                0x00000000      0x2df ./release3A0/src/main.o
+ .gnu.lto_nmi_get_chipid.cd3af224
+                0x00000000       0xe1 ./release3A0/src/main.o
+ .gnu.lto_main.cd3af224
+                0x00000000      0x468 ./release3A0/src/main.o
+ .gnu.lto_.cgraph.cd3af224
+                0x00000000      0x105 ./release3A0/src/main.o
+ .gnu.lto_.vars.cd3af224
+                0x00000000       0x1d ./release3A0/src/main.o
+ .gnu.lto_.refs.cd3af224
+                0x00000000       0x21 ./release3A0/src/main.o
+ .gnu.lto_.statics.cd3af224
+                0x00000000       0x14 ./release3A0/src/main.o
+ .gnu.lto_.decls.cd3af224
+                0x00000000      0x9ef ./release3A0/src/main.o
+ .gnu.lto_.symtab.cd3af224
+                0x00000000       0xd9 ./release3A0/src/main.o
+ .gnu.lto_.opts
+                0x00000000       0x2e ./release3A0/src/main.o
+ .text.nmi_get_chipid
+                0x00000000        0xc ./release3A0/src/main.o
+ .text          0x00000000        0x0 ./release3A0/src/memconfig.o
+ .data          0x00000000        0x0 ./release3A0/src/memconfig.o
+ .bss           0x00000000        0x0 ./release3A0/src/memconfig.o
+ .sbss          0x00000000        0x0 ./release3A0/src/memconfig.o
+ .gnu.lto_.inline.cd3ad172
+                0x00000000       0x12 ./release3A0/src/memconfig.o
+ .gnu.lto_.pureconst.cd3ad172
+                0x00000000       0x12 ./release3A0/src/memconfig.o
+ .gnu.lto_.cgraph.cd3ad172
+                0x00000000       0x13 ./release3A0/src/memconfig.o
+ .gnu.lto_.asm.cd3ad172
+                0x00000000       0x8c ./release3A0/src/memconfig.o
+ .gnu.lto_.vars.cd3ad172
+                0x00000000       0x12 ./release3A0/src/memconfig.o
+ .gnu.lto_.refs.cd3ad172
+                0x00000000       0x13 ./release3A0/src/memconfig.o
+ .gnu.lto_.statics.cd3ad172
+                0x00000000       0x14 ./release3A0/src/memconfig.o
+ .gnu.lto_.decls.cd3ad172
+                0x00000000       0x1a ./release3A0/src/memconfig.o
+ .gnu.lto_.symtab.cd3ad172
+                0x00000000        0x0 ./release3A0/src/memconfig.o
+ .gnu.lto_.opts
+                0x00000000       0x2e ./release3A0/src/memconfig.o
+ .comment       0x00000000       0x24 ./release3A0/src/memconfig.o
+ .text          0x00000000        0x0 ./release3A0/src/wifi_crt0.o
+ .data          0x00000000        0x0 ./release3A0/src/wifi_crt0.o
+ .bss           0x00000000        0x0 ./release3A0/src/wifi_crt0.o
+ .sbss          0x00000000        0x0 ./release3A0/src/wifi_crt0.o
+ .gnu.lto_.jmpfuncs.cd3a895b
+                0x00000000       0x1f ./release3A0/src/wifi_crt0.o
+ .gnu.lto_.inline.cd3a895b
+                0x00000000       0x55 ./release3A0/src/wifi_crt0.o
+ .gnu.lto_.pureconst.cd3a895b
+                0x00000000       0x1c ./release3A0/src/wifi_crt0.o
+ .gnu.lto_cpu_int_enable.cd3a895b
+                0x00000000      0x117 ./release3A0/src/wifi_crt0.o
+ .gnu.lto_init_uart1.cd3a895b
+                0x00000000       0xc2 ./release3A0/src/wifi_crt0.o
+ .gnu.lto_start.cd3a895b
+                0x00000000      0x2a8 ./release3A0/src/wifi_crt0.o
+ .gnu.lto_nmi_update_pll.cd3a895b
+                0x00000000      0x11f ./release3A0/src/wifi_crt0.o
+ .gnu.lto_.cgraph.cd3a895b
+                0x00000000       0x60 ./release3A0/src/wifi_crt0.o
+ .gnu.lto_.vars.cd3a895b
+                0x00000000       0x2e ./release3A0/src/wifi_crt0.o
+ .gnu.lto_.refs.cd3a895b
+                0x00000000       0x27 ./release3A0/src/wifi_crt0.o
+ .gnu.lto_.statics.cd3a895b
+                0x00000000       0x14 ./release3A0/src/wifi_crt0.o
+ .gnu.lto_.decls.cd3a895b
+                0x00000000      0x619 ./release3A0/src/wifi_crt0.o
+ .gnu.lto_.symtab.cd3a895b
+                0x00000000      0x10a ./release3A0/src/wifi_crt0.o
+ .gnu.lto_.opts
+                0x00000000       0x2e ./release3A0/src/wifi_crt0.o
+ .text.nmi_update_pll
+                0x00000000       0x16 ./release3A0/src/wifi_crt0.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+program_memory   0x60001000         0x20000000         xr
+data_memory      0x00000000         0x20000000         !xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                [0x00001000]                _STACK_SIZE = DEFINED (_STACK_SIZE)?_STACK_SIZE:0x10000
+                [0x00000000]                _HEAP_SIZE = DEFINED (_HEAP_SIZE)?_HEAP_SIZE:0x10000
+                [0x00002000]                _PROGRAM_MEMORY_SIZE = DEFINED (_PROGRAM_MEMORY_SIZE)?_PROGRAM_MEMORY_SIZE:0x80000
+                [0x00001000]                _DATA_MEMORY_SIZE = DEFINED (_DATA_MEMORY_SIZE)?_DATA_MEMORY_SIZE:0x80000
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+
+.rela.text
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+
+.rela.rodata
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+
+.rel.srodata
+ *(.rel.srodata .rel.srodata.* .rel.gnu.linkonce.sr.*)
+
+.rela.srodata
+ *(.rela.srodata .rela.srodata.* .rela.gnu.linkonce.sr.*)
+
+.rel.data.rel.ro
+ *(.rel.data.rel.ro* .rel.gnu.linkonce.d.rel.ro.*)
+
+.rela.data.rel.ro
+ *(.rela.data.rel.ro* .rela.gnu.linkonce.d.rel.ro.*)
+
+.rel.data
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.b.*)
+
+.rela.data
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.data .rela.bss.* .rela.gnu.linkonce.b.*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.bss
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+
+.rela.bss
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+
+.rel.sbss
+ *(.rel.sbss .rel.sbss.* .rel.gnu.linkonce.sb.*)
+
+.rela.sbss
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+
+.rel.sdata
+ *(.rel.sdata .rel.sdata.* .rel.gnu.linkonce.s.*)
+
+.rela.sdata
+ *(.rela.sdata .rela.bss.* .rela.gnu.linkonce.s.*)
+
+.rel.vectors
+ *(.rel.vectors .rel.vectors.*)
+
+.rela.vectors
+ *(.rela.vectors .rela.vectors.*)
+
+.text           0x60001000      0x4d4
+ *(.vectors)
+ .vectors       0x60001000        0x4 ./release3A0/src/wifi_crt0.o
+                0x60001000                trap_vectors
+                0x60001004                PROVIDE (_text, .)
+ *(.init .init.*)
+ .init          0x60001004       0x52 ./release3A0/src/wifi_crt0.o
+                0x60001004                start
+ *(.text .text.* .libgcc .gnu.linkonce.t.*)
+ *fill*         0x60001056        0x2 00
+ .text.spi_flash_load_to_cortus_mem
+                0x60001058       0x4e ./release3A0/src/main.o
+ *fill*         0x600010a6        0x2 00
+ .text.spi_flash_write_enable
+                0x600010a8       0x2e ./release3A0/src/main.o
+ *fill*         0x600010d6        0x2 00
+ .text.spi_flash_read_status_reg
+                0x600010d8       0x3c ./release3A0/src/main.o
+ .text.spi_flash_pp
+                0x60001114       0x98 ./release3A0/src/main.o
+ .text.spi_flash_rdid
+                0x600011ac       0x40 ./release3A0/src/main.o
+                0x600011ac                spi_flash_rdid
+ .text.spi_flash_get_size_inmbit
+                0x600011ec       0x2a ./release3A0/src/main.o
+                0x600011ec                spi_flash_get_size_inmbit
+ *fill*         0x60001216        0x2 00
+ .text.spi_flash_get_size_inbyte
+                0x60001218       0x1e ./release3A0/src/main.o
+                0x60001218                spi_flash_get_size_inbyte
+ *fill*         0x60001236        0x2 00
+ .text.spi_init
+                0x60001238       0x18 ./release3A0/src/main.o
+                0x60001238                spi_init
+ .text.spi_flash_write
+                0x60001250       0x60 ./release3A0/src/main.o
+                0x60001250                spi_flash_write
+ .text.startup.main
+                0x600012b0      0x202 ./release3A0/src/main.o
+                0x600012b0                main
+ *fill*         0x600014b2        0x2 00
+ .text.init_uart1
+                0x600014b4       0x1e ./release3A0/src/wifi_crt0.o
+                0x600014b4                init_uart1
+ *(.fini .fini.*)
+                0x600014d4                . = ALIGN (0x4)
+ *fill*         0x600014d2        0x2 00
+                0x600014d4                PROVIDE (_etext, .)
+
+.sec_ovrly1     0x600014d4        0x0 load address 0x60100000
+ sec_ovrly1*(.text)
+                0x60100000                PROVIDE (__load_start_sec_ovrly1, LOADADDR (.sec_ovrly1))
+                0x60100000                PROVIDE (__load_stop_sec_ovrly1, (LOADADDR (.sec_ovrly1) + SIZEOF (.sec_ovrly1)))
+
+.reserve        0x00000000       0x68
+                0x00000020                . = (. + 0x20)
+ *fill*         0x00000000       0x20 00
+                0x00000020                PROVIDE (_debugger_register_save_area, .)
+                0x00000068                . = (. + 0x48)
+ *fill*         0x00000020       0x48 00
+
+.data           0x00000068        0x0
+                0x00000068                PROVIDE (_sdata, .)
+ *(.sdata)
+ *(SORT(.sdata.*))
+ *(SORT(.gnu.linkonce.s.*))
+                0x00000068                . = ALIGN (0x4)
+                0x00000068                PROVIDE (_esdata, .)
+                0x00000068                PROVIDE (_srodata, .)
+ *(.srodata)
+ *(SORT(.srodata.*))
+ *(.gnu.linkonce.sr.*)
+                0x00000068                . = ALIGN (0x4)
+                0x00000068                _esrodata = .
+                0x00000068                PROVIDE (_rodata, .)
+ *(.rodata)
+ *(SORT(.rodata.*))
+ *(.gnu.linkonce.r.*)
+ *(.gcc_except_table)
+ *(SORT(.gcc_except_table.*))
+                0x00000068                . = ALIGN (0x4)
+                0x00000068                _erodata = .
+                0x00000068                PROVIDE (__CTOR_LIST__, .)
+ *(.ctors)
+                0x00000068                PROVIDE (__CTOR_END__, .)
+                0x00000068                PROVIDE (__DTOR_LIST__, .)
+ *(.dtors)
+                0x00000068                PROVIDE (__DTOR_END__, .)
+                0x00000068                PROVIDE (_data, .)
+ *(.data)
+ *(SORT(.data.*))
+ *(SORT(.patchtable.*))
+ *(SORT(.gnu.linkonce.d.*))
+                0x00000068                . = ALIGN (0x4)
+                0x00000068                PROVIDE (_edata, .)
+
+.bss            0x00000068     0x100c
+                0x00000068                PROVIDE (_sbss, .)
+ *(.sbss)
+ *(.scommon)
+ .scommon       0x00000068        0x1 ./release3A0/src/main.o
+                0x00000068                __gnu_lto_v1
+ .scommon       0x00000069        0x0 ./release3A0/src/memconfig.o
+ .scommon       0x00000069        0x0 ./release3A0/src/wifi_crt0.o
+ *(SORT(.sbss.*))
+ *fill*         0x00000069        0x3 00
+ .sbss.u32InternalFlashSize.1410
+                0x0000006c        0x4 ./release3A0/src/main.o
+ .sbss.u32InternalFlashSizeinbytes.1416
+                0x00000070        0x4 ./release3A0/src/main.o
+ *(SORT(.scommon.*))
+ *(SORT(.gnu.linkonce.sb.*))
+                0x00000074                . = ALIGN (0x4)
+                0x00000074                PROVIDE (_esbss, .)
+                0x00000074                PROVIDE (_bss, .)
+ *(.bss)
+ *(SORT(.bss.*))
+ *(SORT(.gnu.linkonce.b.*))
+ *(SORT(COMMON))
+                0x00000074                . = ALIGN (0x4)
+                0x00000074                __heap_bottom = .
+                0x00000074                . = (. + _HEAP_SIZE)
+                0x00000074                __heap_top = .
+                0x00000074                . = ALIGN (0x4)
+                0x00000074                __stack_bottom = .
+                0x00001074                . = (. + _STACK_SIZE)
+ *fill*         0x00000074     0x1000 00
+                0x00001074                __stack_top = .
+                0x00001074                . = ALIGN (0x4)
+                0x00001074                _ebss = .
+                0x00001074                _end = .
+                0x00001074                PROVIDE (end, .)
+
+.noinit         0x00001074        0x0
+                0x00001074                PROVIDE (__noinit_start, .)
+ *(.noinit .noinit.*)
+                0x00001074                PROVIDE (__noinit_end, .)
+                0x00000068                _sdata_size = _esrodata
+                0x000004d4                _program_memory_size = SIZEOF (.text)
+                0x00001074                _data_memory_size = __noinit_end
+                0x00000001                _dummy = ASSERT ((_sdata_size <= 0x10000), Run out of space in short data section)
+                0x00000001                _dummy = ASSERT (! (((DEFINED (aps_malloc) || DEFINED (aps_malloc_dbg)) && DEFINED (malloc))), Warning: Using a mixture of newlib heap and Cortus heap)
+                0x00000001                _dummy = ASSERT (! ((DEFINED (aps_malloc) && DEFINED (aps_malloc_dbg))), Warning: Some but not all code compiled with DEBUG_HEAP defined)
+                0x60100000                _sec_ovrly1_ld_adr = LOADADDR (.sec_ovrly1)
+                0x00000000                _sec_ovrly1_ld_sz = SIZEOF (.sec_ovrly1)
+                0x600014d4                _ovrly_start_addr = _etext
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x23
+ *(.comment)
+ .comment       0x00000000       0x23 ./release3A0/src/main.o
+                                 0x24 (size before relaxing)
+ .comment       0x00000000       0x24 ./release3A0/src/wifi_crt0.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info .gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame    0x00000000      0x180
+ *(.debug_frame)
+ .debug_frame   0x00000000      0x140 ./release3A0/src/main.o
+ .debug_frame   0x00000140       0x40 ./release3A0/src/wifi_crt0.o
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+LOAD ./release3A0/src/main.o
+LOAD ./release3A0/src/memconfig.o
+LOAD ./release3A0/src/wifi_crt0.o
+START GROUP
+LOAD c:/cortus-ide-new/toolchain/bin/../lib/gcc/aps/4.7.3/../../../../aps/lib/aps1\libg.a
+LOAD c:/cortus-ide-new/toolchain/bin/../lib/gcc/aps/4.7.3/../../../../aps/lib/aps1\libc.a
+LOAD c:/cortus-ide-new/toolchain/bin/../lib/gcc/aps/4.7.3/../../../../aps/lib/aps1\libgloss.a
+LOAD c:/cortus-ide-new/toolchain/bin/../lib/gcc/aps/4.7.3/aps1\libgcc.a
+END GROUP
+OUTPUT(./release3A0/programmer_release.jtag aps)

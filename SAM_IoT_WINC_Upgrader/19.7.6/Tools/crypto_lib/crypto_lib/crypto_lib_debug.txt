@@ -1,0 +1,53 @@
+Starting Code::Blocks Release 17.12  rev 11256 Dec 25 2017, 08:45:27 - wx2.8.12 (Windows, unicode) - 32 bit
+-------------- Build: Debug Win32 in crypto_lib (compiler: GNU GCC Compiler)---------------
+mingw32-gcc.exe -Wall -g -DWIN32 -D_DEBUG__ -D_LIB -D_CRT_SECURE_NO_WARNINGS -I..\..\..\common\root_cert -I..\..\..\common\host_fw\ -I..\..\..\host_drv -I..\source -I..\source\crypto -I..\source\x509 -I..\include -c c:\CI\workspace\WINC1500_release\Tools\crypto_lib\crypto_lib_api.c -o .objs\crypto_lib_api.o
+mingw32-gcc.exe -Wall -g -DWIN32 -D_DEBUG__ -D_LIB -D_CRT_SECURE_NO_WARNINGS -I..\..\..\common\root_cert -I..\..\..\common\host_fw\ -I..\..\..\host_drv -I..\source -I..\source\crypto -I..\source\x509 -I..\include -c c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\crypto\bigint.c -o .objs\source\crypto\bigint.o
+mingw32-gcc.exe -Wall -g -DWIN32 -D_DEBUG__ -D_LIB -D_CRT_SECURE_NO_WARNINGS -I..\..\..\common\root_cert -I..\..\..\common\host_fw\ -I..\..\..\host_drv -I..\source -I..\source\crypto -I..\source\x509 -I..\include -c c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\crypto\hash.c -o .objs\source\crypto\hash.o
+mingw32-gcc.exe -Wall -g -DWIN32 -D_DEBUG__ -D_LIB -D_CRT_SECURE_NO_WARNINGS -I..\..\..\common\root_cert -I..\..\..\common\host_fw\ -I..\..\..\host_drv -I..\source -I..\source\crypto -I..\source\x509 -I..\include -c c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\crypto\rsa.c -o .objs\source\crypto\rsa.o
+c:\CI\workspace\WINC1500_release\Tools\crypto_lib\crypto_lib_api.c: In function 'CryptoX509CertDecode':
+c:\CI\workspace\WINC1500_release\Tools\crypto_lib\crypto_lib_api.c:100:0: warning: ignoring #pragma warning  [-Wunknown-pragmas]
+ #pragma warning(suppress: 6386)
+ ^
+In file included from ..\source\crypto/crypto.h:17:0,
+                 from c:\CI\workspace\WINC1500_release\Tools\crypto_lib\crypto_lib_api.c:1:
+c:\CI\workspace\WINC1500_release\Tools\crypto_lib\crypto_lib_api.c: At top level:
+..\..\..\common\host_fw/ecc_types.h:292:26: warning: 'gastrECCSuppList' defined but not used [-Wunused-variable]
+ static tstrEllipticCurve gastrECCSuppList[] = {
+                          ^
+In file included from c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\crypto\crypto.h:17:0,
+                 from c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\crypto\bigint.c:16:
+..\..\..\common\host_fw/ecc_types.h:292:26: warning: 'gastrECCSuppList' defined but not used [-Wunused-variable]
+ static tstrEllipticCurve gastrECCSuppList[] = {
+                          ^
+c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\crypto\hash.c: In function 'MD5ProcessBlock':
+c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\crypto\hash.c:326:0: warning: ignoring #pragma warning  [-Wunknown-pragmas]
+ #pragma warning(suppress: 6385)
+ ^
+In file included from c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\crypto\crypto.h:17:0,
+                 from c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\crypto\hash.c:13:
+c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\crypto\hash.c: At top level:
+..\..\..\common\host_fw/ecc_types.h:292:26: warning: 'gastrECCSuppList' defined but not used [-Wunused-variable]
+ static tstrEllipticCurve gastrECCSuppList[] = {
+                          ^
+In file included from c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\crypto\crypto.h:17:0,
+                 from c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\crypto\rsa.c:54:
+..\..\..\common\host_fw/ecc_types.h:292:26: warning: 'gastrECCSuppList' defined but not used [-Wunused-variable]
+ static tstrEllipticCurve gastrECCSuppList[] = {
+                          ^
+mingw32-gcc.exe -Wall -g -DWIN32 -D_DEBUG__ -D_LIB -D_CRT_SECURE_NO_WARNINGS -I..\..\..\common\root_cert -I..\..\..\common\host_fw\ -I..\..\..\host_drv -I..\source -I..\source\crypto -I..\source\x509 -I..\include -c c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\crypto_port.c -o .objs\source\crypto_port.o
+mingw32-gcc.exe -Wall -g -DWIN32 -D_DEBUG__ -D_LIB -D_CRT_SECURE_NO_WARNINGS -I..\..\..\common\root_cert -I..\..\..\common\host_fw\ -I..\..\..\host_drv -I..\source -I..\source\crypto -I..\source\x509 -I..\include -c c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\rsa_key.c -o .objs\source\rsa_key.o
+mingw32-gcc.exe -Wall -g -DWIN32 -D_DEBUG__ -D_LIB -D_CRT_SECURE_NO_WARNINGS -I..\..\..\common\root_cert -I..\..\..\common\host_fw\ -I..\..\..\host_drv -I..\source -I..\source\crypto -I..\source\x509 -I..\include -c c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\tls_buffer_manager.c -o .objs\source\tls_buffer_manager.o
+mingw32-gcc.exe -Wall -g -DWIN32 -D_DEBUG__ -D_LIB -D_CRT_SECURE_NO_WARNINGS -I..\..\..\common\root_cert -I..\..\..\common\host_fw\ -I..\..\..\host_drv -I..\source -I..\source\crypto -I..\source\x509 -I..\include -c c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\x509\asn1.c -o .objs\source\x509\asn1.o
+In file included from ..\source\crypto/crypto.h:17:0,
+                 from ..\source\x509/x509_cert.h:56,
+                 from c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\rsa_key.c:7:
+..\..\..\common\host_fw/ecc_types.h:292:26: warning: 'gastrECCSuppList' defined but not used [-Wunused-variable]
+ static tstrEllipticCurve gastrECCSuppList[] = {
+                          ^
+mingw32-gcc.exe -Wall -g -DWIN32 -D_DEBUG__ -D_LIB -D_CRT_SECURE_NO_WARNINGS -I..\..\..\common\root_cert -I..\..\..\common\host_fw\ -I..\..\..\host_drv -I..\source -I..\source\crypto -I..\source\x509 -I..\include -c c:\CI\workspace\WINC1500_release\Tools\crypto_lib\source\x509\x509_cert.c -o .objs\source\x509\x509_cert.o
+cmd /c if exist .\..\lib\crypto.lib del .\..\lib\crypto.lib
+ar.exe -r -s .\..\lib\crypto.lib .objs\crypto_lib_api.o .objs\source\crypto\bigint.o .objs\source\crypto\hash.o .objs\source\crypto\rsa.o .objs\source\crypto_port.o .objs\source\rsa_key.o .objs\source\tls_buffer_manager.o .objs\source\x509\asn1.o .objs\source\x509\x509_cert.o
+ar.exe: creating .\..\lib\crypto.lib
+Output file is .\..\lib\crypto.lib with size 105.88 KB
+Process terminated with status 0 (0 minute(s), 8 second(s))
+0 error(s), 7 warning(s) (0 minute(s), 8 second(s))

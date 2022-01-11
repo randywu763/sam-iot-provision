@@ -75,7 +75,7 @@ As a prerequisite to using this provisioning tools package, Python is required t
 
 2. Connect the SAM-IoT WG Development Board to the Host PC (must be running Windows) using a standard micro-USB cable
 
-3. Open a **File Explorer** window and determine the drive `letter` that Windows assigned to `CURIOSITY` 
+3. Open a **File Explorer** window and determine the drive `letter` that Windows assigned to the SAM-IoT board (by default named `CURIOSITY` which is acting like a USB MSC device - meaning files can be copied to or deleted from the board)
 
     <img src=".//media/image_02.png" />
 
@@ -83,9 +83,26 @@ As a prerequisite to using this provisioning tools package, Python is required t
 
     <img src=".//media/image_03.png" />
 
-5. Using any text editor of choice, open the `iotprovision.bat` file located in your local copy of this tools package
+5. Using a serial terminal program (e.g. TeraTerm), create a new serial connection to the `Curiosity Virtual COM port` at 9600 baud
 
-6. Locate the following line in the batch file and note that all 4 command line arguments need to be set 
+    <img src=".//media/image_04.png" />
+    <img src=".//media/image_05.png" />
+
+6. Using the **File Explorer** window, navigate to the main folder that contains this set of cloned/downloaded files (e.g. `<YOUR_PATH>/sam-iot-provision-main`). Drag and drop (copy) the `samiot_wincfw_verify_9600baud.hex` file to the `CURIOSITY` drive
+
+    <img src=".//media/image_06.png" />
+
+7. In the serial terminal window, locate the output message that shows the WINC1500 firmware version and take note of it; for example
+
+    <img src=".//media/image_07.png" />
+
+    NOTE: If the WINC1500 firmware version that is read back from the board is **less than** 19.6.5, you must upgrade the module's internal firmware to the highest available version for this provisioning process to be successful (which will be addressed in a future step)
+
+8. Exit (close) the serial terminal program (window)
+
+9. Using any text editor of choice, open the `iotprovision.bat` file located in your local copy of this tools package
+
+10. Locate the following line in the batch file and note that all 4 command line arguments need to be set based on your needs 
 
     > CALL sam-iot-provision.bat `<cloud_service> <winc_ver> <com_port> <drive_letter>`
 
@@ -95,24 +112,26 @@ As a prerequisite to using this provisioning tools package, Python is required t
 
     - Set the **second** argument which determines the target WINC firmware version to be programmed (view the contents of the [SAM_IoT_WINC_Upgrader](./SAM_IoT_WINC_Upgrader/) folder for the various versions of firmware available for upgrade); for example
 
-        > CALL sam-iot-provision.bat azure `19.7.3` <com_port> <drive_letter>
+        > CALL sam-iot-provision.bat azure `19.7.6` <com_port> <drive_letter>
+    
+        NOTE: You have the option of bypassing the WINC firmware update process by setting the version to 0 - but make sure the WINC firmware version that was read back from the board in a previous step is **at least** 19.6.5. It is strongly recommended to just program the WINC module internal firmware to the highest version supplied by this tools package
 
     - Set the **third** argument to match the Curiosity Virtual COM port `number`; for example
 
-        > CALL sam-iot-provision.bat azure 19.7.3 `3` <drive_letter>
+        > CALL sam-iot-provision.bat azure 19.7.6 `3` <drive_letter>
 
     - Set the **fourth** argument for the `letter` corresponding to the CURIOSITY drive; for example
 
-        > CALL sam-iot-provision.bat azure 19.7.3 3 `F`
+        > CALL sam-iot-provision.bat azure 19.7.6 3 `F`
 
-7. Save the changes to the batch file and exit the text editor
+11. Save the changes to the batch file and exit the text editor
 
-8. Open a command line window (e.g. Command Prompt, PowerShell) and execute `.\iotprovision.bat`
+12. Open a command line window (e.g. Command Prompt, PowerShell) and execute `.\iotprovision.bat`
     
-    NOTE: The WINC firmware update process can take anywhere from 15 to 30 minutes, so now may be a good time to take a coffee break or work on something else
+    NOTE: The WINC firmware update process can take up to 10 minutes, so now may be a good time to take a coffee break or work on something else
     
     <img src=".//media/emoji.png" style="width:0.2.in;height:0.2in" alt="A screenshot of a cell phone Description automatically generated" />
 
-9. When the provisioning script has completed execution, the files for the security certificates (`*.crt`/`*.pem`), keys (`*.key`), and signing requests (`*.csr`) can all be accessed from the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder
+13. When the provisioning script has completed execution, the files for the security certificates (`*.crt`/`*.pem`), keys (`*.key`), and signing requests (`*.csr`) can all be accessed from the [ChainOfTrust](./SAM_IoT_Certs_Generator/ChainOfTrust/) folder, should they ever need to be referenced/used in the future
 
-    <img src=".//media/image_04.png" /> 
+    <img src=".//media/image_08.png" /> 

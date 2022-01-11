@@ -71,9 +71,9 @@ pushd firmware
 echo Downloading Image...
 
 :: winc_programmer_uart.exe -d wincXX00 -e -i m2m_image_XX00.bin -if prog -w -r -p \\.\COM73 -pfw ..\programmer_firmware\releaseXX00\programmer_firmware.bin
-echo Start Call %ptool% -d winc%CHPFAM% -i m2m_image_%VARIANT%.bin -if prog -e  -w -pfw ..\programmer_firmware\release%VARIANT%\%PFW%
+echo Start Call %ptool% -d winc%CHPFAM% -i m2m_image_%VARIANT%.bin -if prog -e -w -pfw ..\programmer_firmware\release%VARIANT%\%PFW%
 ECHO TIMESTAMP:%TIME%
-%ptool% -d winc%CHPFAM% -i m2m_image_%VARIANT%.bin -if prog -e  -w -pfw ..\programmer_firmware\release%VARIANT%\%PFW%
+%ptool% -d winc%CHPFAM% -i m2m_image_%VARIANT%.bin -if prog -e -w -pfw ..\programmer_firmware\release%VARIANT%\%PFW%
 ECHO TIMESTAMP:%TIME% : previuous call ended
 if %ERRORLEVEL% NEQ 0 GOTO FAILED  
 goto SUCCESS
